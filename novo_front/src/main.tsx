@@ -7,13 +7,14 @@ import  {
   Route,
   Link
 } from "react-router-dom"
+import SignUp from './pages/SignUp/SignUp'
 
 
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     
-  <Painel/>    
+  <SignUp/>    
 
   </React.StrictMode>
 )

@@ -19,6 +19,8 @@ import Planos from './Tabs/Planos';
 import Convite from './Tabs/Convite';
 import Faq from './Tabs/Faq';
 import Regulamento from './Tabs/Regulamento';
+import Login from '../Login/Login';
+import SignUp from '../SignUp/SignUp';
 
 const Painel = () => {
     return (
@@ -42,7 +44,7 @@ const Painel = () => {
                   </Nav>
                   <Form className="d-flex">
                 
-                    <Button variant="outline-danger">Sair</Button>
+                    <Button variant="outline-danger" as={Link} to="/entrar">Sair</Button>
                   </Form>
                 </Navbar.Collapse>
               </Container>
@@ -57,7 +59,9 @@ const Painel = () => {
                 <Route path="/convite" element={<Convite/>}/>
                 <Route path="/regulamento" element={<Regulamento/>}/>
                 <Route path="/faq" element={<Faq/>}/>                  
-                    
+
+                  <Route path="/entrar" element={<Login/>}/>
+                  <Route path="/cadastro" element={<SignUp/>}/>   
                 
                 </Routes>
             </div>

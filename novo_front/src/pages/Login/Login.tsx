@@ -3,8 +3,31 @@ import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/esm/Col';
 import Container from 'react-bootstrap/esm/Container';
 import Row from 'react-bootstrap/esm/Row';
+import axios from 'axios';
+import { useNavigate } from "react-router-dom";
+import React from 'react';
 
-function Login() {
+function Login({setIsLoggedIn}: any ){
+  const [errrorMessage, setErrorMessage] = React.useState('')
+  let navigate = useNavigate();
+
+  const handleSubmit = async (event: any) => {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+    const form = {
+      email: formData.get('email'),
+      password: formData.get('password')
+    };
+    const { data } = await axios.post("http://localhost:3002/api/v1/user/signin", form);
+    if (data.status === parseInt('401')) {
+      setErrorMessage(data.response)
+    } else {
+      localStorage.setItem('token', data.token);
+      setIsLoggedIn(true)
+      navigate('/video')
+    }
+  };
+
   return (
     <Container className="my-auto mx-auto align-items-md-center d-flex" fluid  style={{maxWidth: "500px", }}>
         <Row className="justify-content-md-center">
@@ -31,14 +54,20 @@ function Login() {
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicCheckbox">
                         <Form.Check type="checkbox" label="Lembrar minha senha" />
+       
                     </Form.Group>
-      <Button variant="primary" type="submit">Enviar</Button>
+                    
+      <Button variant="primary" type="submit">Entrar</Button>
+      <br/>
+      
+      <h6>Ainda não tem uma conta?</h6>
+      <Button variant="outline-primary" component="form" type="submit" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }} >Cadastre-se</Button>
     </Form>
     </Col>
     </Row>
 
     <Row>
-      <img src/>
+     
     </Row>
 
     </Container>

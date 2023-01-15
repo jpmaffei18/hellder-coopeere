@@ -8,9 +8,24 @@ import Container from 'react-bootstrap/esm/Container';
 import Row from 'react-bootstrap/esm/Row';
 import FormContainer from '../../components/FormContainer';
 import EstadosDoBrasil from '../../components/EstadosDoBrasil';
-import Logo from '../assets/coopere.png';
+import Logo from '../../assets/cooperecropped.png';
 
-const SignUp = () => {
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+
+export default function SignUp () {
+
+    let navigate = useNavigate();
+    const handleSubmit = async (event) => {
+      event.preventDefault();
+      const data = new FormData(event.currentTarget);
+      const formm = {
+        fullname : data.get('fname') +' '+ data.get('lname'),
+        email: data.get('email'),
+        password: data.get('password')
+      };
+      await axios.post("http://localhost:3002/api/v1/user/signup", formm); 
+      navigate('/')  
 
   const [form, setForm] = useState({}) 
   const [errors, setErrors] = useState({})
@@ -372,4 +387,4 @@ const SignUp = () => {
   );
 }
 
-export default SignUp;
+}
