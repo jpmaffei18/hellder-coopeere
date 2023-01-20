@@ -1,19 +1,23 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { HttpCode, Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
+import { HttpStatus } from '@nestjs/common/enums';
+import { User } from './entities/user.entity';
 
 @Controller('users')
 export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
-  @Post()
-  create(@Body() createUserDto: CreateUserDto) {
-    return this.usersService.create(createUserDto);
+  @HttpCode(HttpStatus.CREATED)
+  @Post('/cadastrar')
+  async create(@Body() username: User): Promise<User> {
+    return this.usersService.create(username);
   }
 
-  @Get()
-  findAll() {
+  @Get('/all')
+  @HttpCode(HttpStatus.OK)
+  findAll():Promise<User[]> {
     return this.usersService.findAll();
   }
 
@@ -22,9 +26,10 @@ export class UsersController {
     return this.usersService.findOne(+id);
   }
 
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto) {
-    return this.usersService.update(+id, updateUserDto);
+  @Patch('/atualizar')
+  @HttpCode(HttpStatus.OK)
+  async update(@Body() username:User) {
+    return this.usersService.update(username);
   }
 
   @Delete(':id')

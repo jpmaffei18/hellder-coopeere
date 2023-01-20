@@ -1,8 +1,9 @@
-import { Injectable, Inject } from '@nestjs/common';
+import { Injectable, Inject, HttpException, HttpStatus } from '@nestjs/common';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { Repository } from 'typeorm';
 import { User } from './entities/user.entity';
+import { Bcrypt } from 'src/auth/bcrypt/bcrypt';
 
 @Injectable()
 export class UsersService {
@@ -10,12 +11,23 @@ export class UsersService {
   constructor(
     @Inject('USER_REPOSITORY')
 
-    private usersRepository: Repository<User>
+    private usersRepository: Repository<User>,
+    private bcrypt: Bcrypt
   ) {}
 
   //CRIAÇÃO DE NOVOS USUÁRIOS
-  create(createUserDto: CreateUserDto) {
-    return this.usersRepository.save(createUserDto);
+  async create(username: User): Promise<User> {
+
+    let searchUser = await this.findByUsername(username.username);
+
+    if(!searchUser){
+      username.password = await this.bcrypt.cryptographPasswords(username.password)
+      
+      return this.usersRepository.save(username);
+    }
+
+    throw new HttpException("O Usuario ja existe!", HttpStatus.BAD_REQUEST);
+   
   }
 
 
@@ -25,13 +37,38 @@ export class UsersService {
   }
 
   //EXIBIÇÃO DE UM USUÁRIO NA TELA
-  findOne(id: number) {
-    return this.usersRepository.findOneBy({ id:id });
+  async findOne(id: number): Promise<User> {
+    let username = await this.usersRepository.findOneBy({ id:id });
+
+    if(!username)
+      throw new HttpException('Usuário não encontrado', HttpStatus.NOT_FOUND);
+
+      return username;
   }
 
+  async findByUsername(username: string): Promise<User | undefined> {
+    return await this.usersRepository.findOne({
+        where: {
+            username: username
+        }
+    })
+}
+
+
   //ATUALIZAÇÃO DE USUÁRIO
-  update(id: number, updateUserDto: UpdateUserDto) {
-    return this.usersRepository.update(id, updateUserDto);
+  async update(username: User): Promise<User> {
+
+    let updateUser: User = await this.findOne(username.id)
+    let searchUser = await this.findByUsername(username.username);
+    
+    if(!updateUser)
+        throw new HttpException('Usuário não encontrado!', HttpStatus.NOT_FOUND);
+
+    if(searchUser && searchUser.id !== username.id)
+        throw new HttpException('O Usuário (e-mail) já existe', HttpStatus.BAD_REQUEST);
+
+    username.password = await this.bcrypt.cryptographPasswords(username.password)
+    return this.usersRepository.save(username);
   }
 
   //EXCLUSÃO DE UM USUÁRIO

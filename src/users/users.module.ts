@@ -3,6 +3,7 @@ import { UsersService } from './users.service';
 import { UsersController } from './users.controller';
 import { DatabaseModule } from 'src/database/database.module';
 import { usersProviders } from './users.providers';
+import { Bcrypt } from 'src/auth/bcrypt/bcrypt';
 
 @Module({
   imports: [DatabaseModule],
@@ -14,7 +15,7 @@ import { usersProviders } from './users.providers';
     //https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Operators/Spread_syntax
 
     ...usersProviders,
-    UsersService
+    UsersService, Bcrypt
   ],
   exports: [UsersService]
 })
