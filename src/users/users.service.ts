@@ -37,8 +37,13 @@ export class UsersService {
   }
 
   //EXIBIÇÃO DE UM USUÁRIO NA TELA
-  async findOne(id: number): Promise<User> {
-    let username = await this.usersRepository.findOneBy({ id:id });
+  async findById(id: number): Promise<User> {
+    let username = await this.usersRepository.findOne({ 
+      where: {
+        id 
+      }
+    
+    });
 
     if(!username)
       throw new HttpException('Usuário não encontrado', HttpStatus.NOT_FOUND);
@@ -56,9 +61,9 @@ export class UsersService {
 
 
   //ATUALIZAÇÃO DE USUÁRIO
-  async update(username: User): Promise<User> {
+  async update(username: User, id: User): Promise<User> {
 
-    let updateUser: User = await this.findOne(username.id)
+    let updateUser: User = await this.findById(username.id)
     let searchUser = await this.findByUsername(username.username);
     
     if(!updateUser)
@@ -68,7 +73,7 @@ export class UsersService {
         throw new HttpException('O Usuário (e-mail) já existe', HttpStatus.BAD_REQUEST);
 
     username.password = await this.bcrypt.cryptographPasswords(username.password)
-    return this.usersRepository.save(username);
+    return await this.usersRepository.save(username);
   }
 
   //EXCLUSÃO DE UM USUÁRIO

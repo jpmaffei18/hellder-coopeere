@@ -1,9 +1,10 @@
-import { HttpCode, Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { UseGuards, HttpCode, Controller, Get, Post, Body, Patch, Put, Param, Delete } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { HttpStatus } from '@nestjs/common/enums';
 import { User } from './entities/user.entity';
+import { JwtAuthGuard } from 'src/auth/guard/jwt-auth.guard';
 
 @Controller('users')
 export class UsersController {
@@ -15,6 +16,8 @@ export class UsersController {
     return this.usersService.create(username);
   }
 
+  
+  @UseGuards(JwtAuthGuard)
   @Get('/all')
   @HttpCode(HttpStatus.OK)
   findAll():Promise<User[]> {
@@ -22,14 +25,15 @@ export class UsersController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.usersService.findOne(+id);
+  findById(@Param('id') id: number) {
+    return this.usersService.findById(id);
   }
 
+  @UseGuards(JwtAuthGuard)
   @Patch('/atualizar')
   @HttpCode(HttpStatus.OK)
-  async update(@Body() username:User) {
-    return this.usersService.update(username);
+  async update(@Body() username:User, id: User): Promise<User> {
+    return this.usersService.update(username, id);
   }
 
   @Delete(':id')
