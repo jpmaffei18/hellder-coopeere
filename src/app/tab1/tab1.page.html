@@ -1,17 +1,112 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Painel
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <!--
+  <ion-segment value="buttons">
+    <ion-segment-button value="buttons">
+      <ion-label>INFO</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="segment">
+      <ion-label>REGULAMENTO</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="default">
+      <ion-label>Button</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="segments">
+      <ion-label>Button</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+    -->  
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Informações Pessoais</ion-card-title>
+      <ion-card-subtitle>Seja bem-vindo, Hellder Benjamim</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <div class="icon-1">
+            <ion-icon name="person-outline"></ion-icon>
+          </div>
+          <ion-label class="label-1">Associado</ion-label>
+     
+
+          <ion-button (click)="alertAssociado()">Ver Info</ion-button>
+     
+        </ion-item>
+  
+        <ion-item>
+         <div class="icon-1">
+            <ion-icon name="call-outline"></ion-icon>
+          </div>
+          <ion-label class="label-1">Contatos</ion-label>
+
+          <ion-button (click)="alertContato()">Ver Info</ion-button>
+
+          
+
+        </ion-item>
+  
+        <ion-item>
+       
+          <div class="icon-1">
+            <ion-icon name="map-outline"></ion-icon>
+          </div>
+          
+          <ion-label class="label-1">Endereço</ion-label>
+
+
+          <ion-button (click)="alertEndereco()">Ver Info</ion-button>
+
+       
+
+
+        </ion-item>
+  
+       
+      </ion-list>
+
+      <ion-button fill="clear">Reeditar</ion-button>
+
+
+    </ion-card-content>
+  </ion-card>
+  
+
+  <ion-card color="light">
+    <ion-card-header>
+      <ion-card-title>Regulamento</ion-card-title>
+      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+
+      The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card color="light">
+    <ion-card-header>
+      <ion-card-title>Sorteio</ion-card-title>
+      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+
+The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+    </ion-card-content>
+  </ion-card>
+
+
+
 </ion-content>
