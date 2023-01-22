@@ -1,17 +1,80 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      Cadastro
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+ <div class="container"> 
+  <h2>1. Triagem</h2>
+
+<div class="triagem">
+
+  <ion-list>
+    <ion-radio-group value="strawberries">
+      <ion-item>
+        <ion-label>Enel-RJ</ion-label>
+        <ion-radio slot="end" value="grapes"></ion-radio>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label>Light-RJ</ion-label>
+        <ion-radio slot="end" value="strawberries"></ion-radio>
+      </ion-item> 
+  
+      <ion-item>
+        <ion-label>Enel-SP</ion-label>
+        <ion-radio slot="end" value="pineapple"></ion-radio>
+      </ion-item>
+  
+  
+    </ion-radio-group>
+  </ion-list>
+
+
+  <br>
+
+  <ion-list>
+    <ion-radio-group value="strawberries">
+      <ion-item>
+        <ion-label>Tenho uma conta na <br> concessionária selecionada <br> em meu nome.</ion-label>
+        <ion-radio slot="end" value="grapes"></ion-radio>
+
+        <ion-button color="warning" (click)="popoverCons($event)">Atenção!</ion-button>
+          <ion-popover #popover1 [isOpen]="isOpen1" (didDismiss)="isOpen1 = false">
+              <ng-template>
+                <ion-content class="ion-padding">Preencha o formulário PRODIST ANEEL com os dados desta conta!!!</ion-content>
+              </ng-template>
+          </ion-popover>
+
+      </ion-item>
+  
+      <ion-item>
+        <ion-label>Não sou titular de uma conta da <br> concessionária selecionada, <br> mas me cadastrarei <br> com o Link convite que me <br> foi enviado ou o farei <br> sem convite por livre e <br> espontânea vontade para <br> apoiar a cooperativa.</ion-label>
+        <ion-radio slot="end" value="strawberries"></ion-radio>
+
+        <ion-button color="warning" (click)="popoverCooperado($event)">Atenção!</ion-button>
+        <ion-popover #popover2 [isOpen]="isOpen2" (didDismiss)="isOpen2 = false">
+            <ng-template>
+              <ion-content class="ion-padding">Você será um Cooperado Apoiador!!!</ion-content>
+            </ng-template>
+        </ion-popover>
+
+      </ion-item>
+  
+  
+    </ion-radio-group>
+  </ion-list>
+
+
+</div>
+
+
+  <h2>2. PRODIST</h2>
+  <h2>3. Mensalidade</h2>
+</div>
+
 </ion-content>
