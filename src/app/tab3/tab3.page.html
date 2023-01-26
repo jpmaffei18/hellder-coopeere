@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Perfil
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-list>
+    <ion-item>
+      <ion-label [routerLink]="['/tabs/tab1']">Informações Pessoais</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label [routerLink]="['/tabs/tab2']">Cadastro</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label [routerLink]="['/regulamento']" >Regulamento</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label [routerLink]="['/sorteio']">Sorteio</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label [routerLink]="['/convite']" >Convite </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label [routerLink]="['/sair']">Sair</ion-label>
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>

@@ -1,0 +1,40 @@
+.avatar {
+    width: 20%;
+    clip-path: circle(40% at center);
+    display: flex;
+    margin: auto;
+
+}
+
+
+.multiple-cards{
+    display: flex;
+    border-radius: 50%;
+    margin: auto;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.individual-multiple-cards{
+    color: #fff;
+}
+
+
+.icon-1 {
+    padding: 15px;
+}
+
+.label-1 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.label-2 {
+    align-items: flex-end;
+}
+
+
+.label-3 {
+    align-items: flex-end;
+    max-width: 200px;
+}
