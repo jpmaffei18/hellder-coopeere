@@ -6,13 +6,32 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   public appPages = [
-    { title: 'Inbox', url: '/folder/Inbox', icon: 'mail' },
-    { title: 'Outbox', url: '/folder/Outbox', icon: 'paper-plane' },
-    { title: 'Favorites', url: '/folder/Favorites', icon: 'heart' },
-    { title: 'Archived', url: '/folder/Archived', icon: 'archive' },
-    { title: 'Trash', url: '/folder/Trash', icon: 'trash' },
-    { title: 'Spam', url: '/folder/Spam', icon: 'warning' },
+    { title: 'Home', url: '/home', icon: 'home' },
+    { title: 'Cadastro', url: '/cadastro', icon: 'settings' },
+    { title: 'Perfil', url: '/folder/Favorites', icon: 'person' },
+
+    { title: 'Informações Pessoais', url: '/folder/Info', icon: 'person-cicle-outline' },
+
+    { title: 'Regulamento', url: '/regulamento', icon: 'document-text-outline ' },
+    { title: 'Sorteio', url: '/sorteio', icon: 'flower-outline' },
+    { title: 'Convite', url: '/convite', icon: 'chatbubbles-outline' },
+    { title: 'Sair', url: '/sair', icon: 'arrow-back-circle-outline' },
+  
   ];
-  public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
+  
   constructor() {}
 }
+
+/*   
+
+
+
+
+      <ion-label [routerLink]="['/tabs/tab1']">Informações Pessoais</ion-label>
+      <ion-label [routerLink]="['/tabs/tab2']">Cadastro</ion-label>
+      <ion-label [routerLink]="['/regulamento']" >Regulamento</ion-label>
+      <ion-label [routerLink]="['/sorteio']">Sorteio</ion-label>
+      <ion-label [routerLink]="['/convite']" >Convite </ion-label>
+      <ion-label [routerLink]="['/login']">Sair</ion-label>
+  
+*/

@@ -1,0 +1,64 @@
+<ion-header>
+
+  
+  <br>
+  <br>
+
+
+<div class="logo">
+    <div>
+  <img src="../../../assets/images/COOPEERE_BLACK-nobg.png"/>
+    </div>
+</div>
+
+</ion-header>
+
+<div >
+  <h2 class="login-message">
+    Seja Bem-Vindo!
+  </h2>
+  <h4 class="login-message-2">
+    Cooperado! <br> É muito bom te ter conosco!
+  </h4>
+</div>
+
+
+<ion-content>
+
+  <div class="login-input">
+  <ion-item>
+    <ion-label>E-Mail</ion-label>
+    <ion-input type="email" placeholder="Entre com seu email"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Senha</ion-label>
+    <ion-input type="password" placeholder="Entre com sua senha"></ion-input>
+  </ion-item>
+
+  <br>
+  <br>
+
+<!--  (click)="openLogin()" href="/signup" -->
+
+  <div class="cadastrar">
+    <ion-button type="submit" [routerLink]="['/tabs/tab1']" >Entrar</ion-button>
+   </div>
+   
+</div>
+
+<br>
+<br>
+
+<div class="esqueci">
+  <label ><strong>Esqueci minha senha</strong></label>
+</div>
+
+<br>
+<br>
+
+<div class="cadastrar">
+ <ion-button type="button" [routerLink]="['/signup']">Cadastre-Se</ion-button>
+</div>
+
+</ion-content>

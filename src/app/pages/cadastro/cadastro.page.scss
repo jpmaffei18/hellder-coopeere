@@ -1,0 +1,84 @@
+.container {
+    padding: 30px;
+}
+
+.prodist-label{
+    padding-top: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    
+}
+
+.form-inputs {
+    border-radius: 5px;
+    min-width: 450px;
+    padding: 10px;
+}
+
+.mini-form-inputs {
+    border-radius: 5px;
+    width: 60px;
+    padding: 10px;
+}
+
+.input-group {
+    display: flex;
+    margin: 10px;
+    flex-direction: row;
+}
+
+.space {
+    padding-left: 12px;
+}
+
+.input-group-text {
+    font-weight: bold;
+}
+
+.opcao-pagamento-content {
+    background-color: #434343;
+    padding: 18px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.concessionarias {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.concessionarias-mensagem {
+    font-size: 19px;
+    font-weight: bold;
+   
+}
+
+.box-cm {
+    max-width: 500px;
+}
+
+.opcao-pagamento-price {
+    font-size: 30px;
+}
+
+.opcao-pagamento-header {
+    font-size: 20px;
+}
+
+.mensalidade-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.form-check-label {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.mensalidade-container-box {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}

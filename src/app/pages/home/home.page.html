@@ -1,0 +1,108 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+  <ion-card style="display: flex; justify-content: space-between;">
+    <ion-card-header>
+      <ion-card-title>Seja bem-vindo</ion-card-title>
+   
+      <ion-card-subtitle style="font-size: 25px;"> Hellder Benjamim</ion-card-subtitle>
+    </ion-card-header>
+
+  <div  class="avatar">
+    <ion-img src="https://www.shutterstock.com/image-photo/outdoor-portrait-50-year-old-260nw-1384997954.jpg"></ion-img>
+  </div>
+
+  </ion-card>
+
+
+<div class="multiple-cards">
+
+<ion-card class="individual-multiple-cards" style="background-color: red;">
+<ion-card-content>
+    <h2>Atualizações</h2>
+</ion-card-content>
+</ion-card>
+
+
+<ion-card class="individual-multiple-cards" style="background-color: green;">
+<ion-card-content>
+  <h2>Blog</h2>
+</ion-card-content>
+</ion-card>
+
+<ion-card class="individual-multiple-cards" style="background-color: yellow; color: black;">
+<ion-card-content>
+  <h2>Suporte</h2>
+</ion-card-content>
+</ion-card>
+
+
+
+</div>
+
+
+
+<ion-card>
+  
+  <ion-card-content>
+    <ion-list>
+      <ion-item>
+        <div class="icon-1">
+          <ion-icon name="person-outline"></ion-icon>
+        </div>
+        <ion-label class="label-1">Associado</ion-label>
+   
+
+        <ion-button (click)="alertAssociado()">Ver Info</ion-button>
+   
+      </ion-item>
+
+      <ion-item>
+       <div class="icon-1">
+          <ion-icon name="call-outline"></ion-icon>
+        </div>
+        <ion-label class="label-1">Contatos</ion-label>
+
+        <ion-button (click)="alertContato()">Ver Info</ion-button>
+
+        
+
+      </ion-item>
+
+      <ion-item>
+     
+        <div class="icon-1">
+          <ion-icon name="map-outline"></ion-icon>
+        </div>
+        
+        <ion-label class="label-1">Endereço</ion-label>
+
+
+        <ion-button (click)="alertEndereco()">Ver Info</ion-button>
+
+     
+
+
+      </ion-item>
+
+     
+    </ion-list>
+
+    <ion-button fill="clear">Reeditar</ion-button>
+
+
+  </ion-card-content>
+</ion-card>
+
+
+
+
+
+
+</ion-content>
