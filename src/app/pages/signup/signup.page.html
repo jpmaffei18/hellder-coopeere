@@ -24,7 +24,7 @@
       Cadastre-se e seja um cooperado.
     </h4>
   </div>
-
+  <form [formGroup]="formulario" (submit)="cadastro()">
   <div class="dados">
     <h1> <strong>Dados Pessoais</strong></h1>
   </div>
@@ -32,43 +32,33 @@
   <div class="login-input">
 
   <ion-item>
-    <ion-label>Nome completo</ion-label>
-    <ion-input type="text" placeholder="Insira seu nome completo."></ion-input>
+    <ion-label>Nome</ion-label>
+    <ion-input type="text" [(ngModel)]="usuario.name" formControlName="name"  placeholder="Insira seu primeiro nome."></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-label>E-Mail</ion-label>
-    <ion-input type="email"  placeholder="Entre com seu e-mail"></ion-input>
+    <ion-label>Sobrenome</ion-label>
+    <ion-input [(ngModel)]="usuario.secondname" formControlName="secondname"  type="text" placeholder="Insira seu sobrenome completo."></ion-input>
   </ion-item>
 
-  <!--  [(ngModel)]="model.email" -->
+  <ion-item>
+    <ion-label>Data de Nascimento</ion-label>
+    <ion-input [(ngModel)]="usuario.b_day" formControlName="b_day"  type="text"  placeholder="Entre com sua data de nascimento"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Gênero</ion-label>
+    <ion-input type="text" [(ngModel)]="usuario.genre" formControlName="genre"  placeholder="Entre com seu gênero"></ion-input>
+  </ion-item>
+
 
   <ion-item>
     <ion-label>Telefone Celular</ion-label>
-    <ion-input type="tel" placeholder="Entre com seu telefone celular"></ion-input>
+    <ion-input type="tel" [(ngModel)]="usuario.phonenumber" formControlName="phonenumber"  placeholder="Entre com seu telefone celular"></ion-input>
   </ion-item>
 
-  <ion-item>
-    <ion-label>CPF/CNPJ</ion-label>
-    <ion-input type="number" placeholder="Entre com seu CPF e CNPJ"></ion-input>
-  </ion-item>
 
-  <ion-item>
-    <ion-label>Telefone Fixo</ion-label>
-    <ion-input type="tel" placeholder="Entre com seu telefone fixo"></ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-label>Senha</ion-label>
-    <ion-input type="password"  placeholder="Entre com sua senha"></ion-input>
-  </ion-item>
-
-  <!-- [(ngModel)]="model.password"  -->
-
-  <ion-item>
-    <ion-label>Confirmar senha</ion-label>
-    <ion-input type="password" placeholder="Confirme sua senha"></ion-input>
-  </ion-item>
+ 
 
   <div class="dados">
     <h1> <strong>Endereço</strong></h1>
@@ -79,43 +69,50 @@
 
   <ion-item>
     <ion-label>CEP</ion-label>
-    <ion-input type="number" placeholder="Entre com seu CEP"></ion-input>
+    <ion-input type="number" [(ngModel)]="usuario.cep" formControlName="cep"   placeholder="Entre com seu CEP"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label>Endereço</ion-label>
-    <ion-input type="text" placeholder="Entre com sue endereço"></ion-input>
+    <ion-input type="text" [(ngModel)]="usuario.address" formControlName="address"  placeholder="Entre com sue endereço"></ion-input>
   </ion-item>
 
-  <ion-item>
-    <ion-label>Bairro</ion-label>
-    <ion-input type="text" placeholder="Entre com seu bairro"></ion-input>
-  </ion-item>
 
-  <ion-item>
-    <ion-label>Número</ion-label>
-    <ion-input type="number" step="0.01"  placeholder="Confirme seu número"></ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-label>Complemento</ion-label>
-    <ion-input type="text" placeholder="Insira um complemento"></ion-input>
-  </ion-item>
 
   <ion-item>
     <ion-label>Cidade</ion-label>
-    <ion-input type="text" placeholder="Qual é sua cidade?"></ion-input>
+    <ion-input type="text" [(ngModel)]="usuario.city" formControlName="city"  placeholder="Qual é sua cidade?"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label>Estado</ion-label>
-    <ion-input type="text"  placeholder="Qual é o seu estado?"></ion-input>
+    <ion-input type="text" [(ngModel)]="usuario.state" formControlName="state"  placeholder="Qual é o seu estado?"></ion-input>
   </ion-item>
+
+  <ion-item>
+    <ion-label>E-Mail</ion-label>
+    <ion-input type="email" [(ngModel)]="usuario.email" formControlName="email"  placeholder="Entre com seu e-mail"></ion-input>
+  </ion-item>
+
+  <!--  [(ngModel)]="model.email" -->
+  <ion-item>
+    <ion-label>Nome de Usuário</ion-label>
+    <ion-input type="text" [(ngModel)]="usuario.username" formControlName="username"  placeholder="Entre com seu telefone celular"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Senha</ion-label>
+    <ion-input type="password" [(ngModel)]="usuario.password" formControlName="password"  placeholder="Entre com sua senha"></ion-input>
+  </ion-item>
+
+  <!-- [(ngModel)]="model.password"  -->
+
+ 
 
  
 <br>
   <div class="cadastrar">
-    <ion-button href="/tab1">Cadastrar e Enviar</ion-button>
+    <ion-button type="submit">Cadastrar e Enviar</ion-button>
    </div>
 
 
@@ -137,5 +134,5 @@
 
 <br>
 <br>
-
+</form>
 </ion-content>

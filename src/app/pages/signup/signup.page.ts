@@ -24,10 +24,19 @@ export class SignupPage implements OnInit {
 
   usuario: Usuario = {
     id: 0,
-    username: "",
-    nome: "",
-    telefone: "",
+   
+    name: "",
+    secondname: "",
+    b_day: "",
+    genre: "",
+    phonenumber: 0,
+    cep: 0,
+    address: "",
+    city: "",
+    state: "",
+
     email: "",
+    username: "",
     password: ""
   }
 
@@ -35,21 +44,38 @@ export class SignupPage implements OnInit {
 
   validaForm(){
     this.formulario = this.formBuilder.group({
-      username: ['', [Validators.required]],
-      nome: ['', [Validators.required]],
-      telefone: ['', [Validators.required]],
+    
+      name: ['', [Validators.required]],
+      secondname: ['', [Validators.required]],
+      b_day: ['', [Validators.required]],
+      genre: ['', [Validators.required]],
+      phonenumber: ['', [Validators.required]],
+      cep: ['', [Validators.required]],
+      address: ['', [Validators.required]],
+      city: ['', [Validators.required]],
+      state: ['', [Validators.required]],
       email: ['', [Validators.required]],
+      username: ['', [Validators.required]],
       password: ['', [Validators.required]]
     });
   }
 
   cadastro(): void{
     const data = {
-    username: this.usuario.username,
-    nome: this.usuario.nome,
-    telefone: this.usuario.telefone,
+    
+    name: this.usuario.name,
+    secondname: this.usuario.secondname,
+    b_day: this.usuario.b_day,
+    genre: this.usuario.genre,
+    phonenumber: this.usuario.phonenumber,
+    cep: this.usuario.cep,
+    address: this.usuario.address,
+    city: this.usuario.city,
+    state: this.usuario.state,
     email: this.usuario.email,
-    password: this.usuario.password
+    username: this.usuario.username,
+    password: this.usuario.password,
+   
     };
     this.usersService.create(data)
     .subscribe({
