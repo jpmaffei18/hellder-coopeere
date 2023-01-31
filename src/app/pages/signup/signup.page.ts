@@ -10,6 +10,8 @@ import { UsersService } from 'src/app/users.service';
   styleUrls: ['./signup.page.scss'],
 })
 export class SignupPage  {
+  /*
+  
   model: User
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private toast: ToastController, private usersService: UsersService) { 
@@ -26,7 +28,7 @@ export class SignupPage  {
         /*
         Esse processo vai salvar o token para requests futuras (this.navCtrl.pop()). o navCtrl redirecionará o usuário para outra tela (this.navCtrl.setRoot()) 
 
-        */
+       
 
 
       }) 
@@ -47,5 +49,8 @@ export class SignupPage  {
 export class User {
   email: string = "";
   password: string = ""; 
+
+ */
+
 }
 

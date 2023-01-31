@@ -39,8 +39,10 @@
   <br>
   <br>
 
+<!--  (click)="openLogin()" href="/signup" -->
+
   <div class="cadastrar">
-    <ion-button type="submit" (click)="openLogin()" href="/signup">Entrar</ion-button>
+    <ion-button type="submit" [routerLink]="['/tabs/tab1']" >Entrar</ion-button>
    </div>
    
 </div>
@@ -56,7 +58,7 @@
 <br>
 
 <div class="cadastrar">
- <ion-button href="/signup">Cadastre-Se</ion-button>
+ <ion-button type="button" [routerLink]="['/signup']">Cadastre-Se</ion-button>
 </div>
 
 </ion-content>
