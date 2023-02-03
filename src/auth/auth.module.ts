@@ -8,7 +8,7 @@ import { JwtModule } from '@nestjs/jwt';
 import { jwtConstants } from './constants';
 import { Bcrypt } from './bcrypt/bcrypt';
 import { JwtStrategy } from './strategy/jwt.strategy';
-import { AuthController } from './controllers/auth.constroller';
+import { AuthController } from './controllers/auth.controller';
 
 @Module({
   imports: [

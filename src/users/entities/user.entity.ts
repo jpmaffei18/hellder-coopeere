@@ -1,47 +1,77 @@
-
+import { IsEmail, IsNotEmpty, MinLength } from "class-validator"
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { ApiProperty } from "@nestjs/swagger"
 
 // PADRÃO DE CARACTERÍSTICAS, QUE É DE ONDE NASCEM AS TABELAS DO BANCO DE DADOS
 
 @Entity()
+
 export class User {
+    @IsNotEmpty()
+    @ApiProperty()
     @PrimaryGeneratedColumn()
-    id: number;
+    public id: number;
 
+    @IsNotEmpty()
+    @ApiProperty()
     @Column({length: 100})
-    name: string;
+    public name: string;
     
+    @IsNotEmpty()
     @Column({length: 100})
-    secondname: string;
+    @ApiProperty()
+    public secondname: string;
 
+    @IsNotEmpty()
     @Column()
-    b_day: string;
+    @ApiProperty()
+    public b_day: string;
 
+    @IsNotEmpty()
     @Column({length: 100})
-    genre: string;
+    @ApiProperty()
+    public genre: string;
 
+    @IsNotEmpty()
     @Column()
-    phonenumber: number;
+    @ApiProperty()
+    public phonenumber: number;
 
+    @IsNotEmpty()
     @Column()
-    cep: number;
+    @ApiProperty()
+    public cep: number;
 
+    @IsNotEmpty()
     @Column({length: 100})
-    address: string;
+    @ApiProperty()
+    public address: string;
 
+    @IsNotEmpty()
     @Column({length: 100})
-    city: string;
+    @ApiProperty()
+    public city: string;
     
+    @IsNotEmpty()
     @Column({length: 100})
-    state: string;
+    @ApiProperty()
+    public state: string;
 
+        @IsEmail()
         @Column({length: 100})
-        email: string;
+        @ApiProperty()
+        public email: string;
 
+        @IsNotEmpty()
         @Column({length: 100})
-        username: string;
+        @ApiProperty()
+        public username: string;
 
+        
+        @IsNotEmpty()
+        @MinLength(8)
         @Column({length: 100})
-        password: string;
+        @ApiProperty()
+        public password: string;
 }
 

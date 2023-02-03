@@ -10,6 +10,23 @@ export const databaseProviders = [
     useFactory: async () => {
       const dataSource = new DataSource({
 
+        /*
+
+
+      type: 'postgres',
+      url: process.env.DATABASE_URL,
+      logging: false,
+      dropSchema: false,
+      ssl: {
+        rejectUnauthorized: false,
+      },
+      synchronize: true,
+      autoLoadEntities: true,
+
+        */
+
+
+
         //TIPO DO BANCO DE DADOS
         type: 'mysql',
 
@@ -38,6 +55,7 @@ export const databaseProviders = [
 
         //NA LINHA ABAIXO A SINCRONIZAÇÃO SIMULTÂNEA COM O BANCO DE DADOS OCORRE
         synchronize: false,
+        
       });
 
       //ESSA FUNÇÃO INICIALIZA TODO O PROCESSO
