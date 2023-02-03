@@ -1,0 +1,30 @@
+.logo {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  
+    margin: auto;
+}
+
+.container-form {
+    background-color: bisque;
+    max-width: 500px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    padding: 10px;
+    margin: auto;
+    flex-direction: column;
+    border-radius: 20px;
+
+}
+
+ion-input {
+
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.inputs {
+    padding: 10px;
+}
