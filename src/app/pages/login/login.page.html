@@ -1,31 +1,110 @@
+<ion-header class="header-header">
+<div>
+  <ion-icon name="person"></ion-icon>
+  <ion-label class="label-header">Login</ion-label>
+</div>
+  |
+  <div style="padding-left: 15px;">
+    <ion-icon name="pencil"></ion-icon>
+    <ion-label >Cadastro</ion-label>
+  </div>
+  
+
+</ion-header>
+
+<ion-header class="header">
+  
+  
+    <ion-img style="max-width: 10%;" src="../../../assets/images/COOPEERE-nobg.png"></ion-img>
+  
+
+  
+  <ion-button fill="clear">Home</ion-button>
+  
+  <ion-list class="lista-dropdown">
+   
+      <ion-select interface="popover" placeholder="A Coopeere">
+        <ion-select-option value="apples">Quem somos?</ion-select-option>
+        <ion-select-option value="oranges">Nossos objetivos</ion-select-option>
+        <ion-select-option value="bananas">A equipe</ion-select-option>
+      </ion-select>
+    
+  </ion-list>
+
+  <ion-button fill="clear">Legalização</ion-button>
+  <ion-button fill="clear">Estatuto</ion-button>
+  <ion-button fill="clear">Vantagens</ion-button>
+  <ion-button fill="clear">Parceiros</ion-button>
+  <ion-button fill="clear">Fale Conosco</ion-button>
+
+</ion-header>
+
 
 <ion-content>
 
   <div class="container">
 
  
+    <br>
+    <br><br>
 
-  <div class="logo">
-    <ion-label>COOPEERE</ion-label>
-  </div>
 
-  <div class="container-form">
-
-    <div>
-      <h3>Seja Bem-Vindo!</h3>
+ 
+  <ion-card class="container-form">
+    
+    <div class="welcome-div">
+      <ion-label class="welcome">Seja Bem-Vindo!</ion-label>
     </div>
-
+<br><br>
     <div class="inputs">
+    
+      <ion-item fill="solid">
+          <div class="input-labels"> 
+            <ion-label position="floating" class="input-label-text">Email</ion-label>
+          </div>
+        <ion-input  type="email" placeholder="Digite o seu email" [clearInput]="true" ></ion-input>
+      </ion-item>
 
-      <ion-label>Email</ion-label>
-      <ion-input type="email" placeholder="Digite o seu email"></ion-input>
-      <ion-label>Senha</ion-label>
-      <ion-input type="password" placeholder="Digite a sua senha"></ion-input>
+      <ion-item fill="solid">
+        <div class="input-labels">  
+          <ion-label position="floating" class="input-label-text">Senha</ion-label>
+       </div>  
+      <ion-input type="password" placeholder="Digite a sua senha" [clearInput]="true"></ion-input>
+    </ion-item>
     </div>
+<br>
+      <div>
+        <ion-button>Entrar</ion-button>
+      </div>
+    <ion-item>
+      <ion-label>Clique para salvar neste dispositivo</ion-label>
+      <ion-radio slot="start" ></ion-radio>
+    </ion-item>
+    
 
-    <ion-button>Entrar</ion-button>
-
-  </div>
-  
+  </ion-card>
+  <br><br>
 </div>
 </ion-content>
+
+<ion-footer class="footer">
+
+
+  <div class="menu-footer">
+    
+  
+  <ion-label>Eventos</ion-label>
+  <ion-label>Publicações</ion-label>
+  <ion-label>Agenda</ion-label>
+  <ion-label>Galeria de Fotos</ion-label>
+  <ion-label>Fale Conosco</ion-label>
+  </div>
+
+  <div class="social-media-icons">
+    <ion-label>Facebook</ion-label>
+    <ion-label>Instagram</ion-label>
+    <ion-label>Youtube</ion-label>
+  </div>
+  
+  
+</ion-footer>
