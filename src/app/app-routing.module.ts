@@ -32,6 +32,54 @@ const routes: Routes = [
   },  {
     path: 'onboarding',
     loadChildren: () => import('./pages/onboarding/onboarding.module').then( m => m.OnboardingPageModule)
+  },
+  {
+    path: 'quemsomos',
+    loadChildren: () => import('./pages/quemsomos/quemsomos.module').then( m => m.QuemsomosPageModule)
+  },
+  {
+    path: 'objetivos',
+    loadChildren: () => import('./pages/objetivos/objetivos.module').then( m => m.ObjetivosPageModule)
+  },
+  {
+    path: 'equipe',
+    loadChildren: () => import('./pages/equipe/equipe.module').then( m => m.EquipePageModule)
+  },
+  {
+    path: 'legalizacao',
+    loadChildren: () => import('./pages/legalizacao/legalizacao.module').then( m => m.LegalizacaoPageModule)
+  },
+  {
+    path: 'estatuto',
+    loadChildren: () => import('./pages/estatuto/estatuto.module').then( m => m.EstatutoPageModule)
+  },
+  {
+    path: 'vantagens',
+    loadChildren: () => import('./pages/vantagens/vantagens.module').then( m => m.VantagensPageModule)
+  },
+  {
+    path: 'parceiros',
+    loadChildren: () => import('./pages/parceiros/parceiros.module').then( m => m.ParceirosPageModule)
+  },
+  {
+    path: 'faleconosco',
+    loadChildren: () => import('./pages/faleconosco/faleconosco.module').then( m => m.FaleconoscoPageModule)
+  },
+  {
+    path: 'eventos',
+    loadChildren: () => import('./pages/eventos/eventos.module').then( m => m.EventosPageModule)
+  },
+  {
+    path: 'agenda',
+    loadChildren: () => import('./pages/agenda/agenda.module').then( m => m.AgendaPageModule)
+  },
+  {
+    path: 'galeria',
+    loadChildren: () => import('./pages/galeria/galeria.module').then( m => m.GaleriaPageModule)
+  },
+  {
+    path: 'publicacoes',
+    loadChildren: () => import('./pages/publicacoes/publicacoes.module').then( m => m.PublicacoesPageModule)
   }
 
 ];

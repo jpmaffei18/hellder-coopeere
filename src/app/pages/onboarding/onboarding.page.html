@@ -1,10 +1,11 @@
 <ion-header class="header-header">
-  <div>
+  
+  <div [routerLink]="['/login']">
     <ion-icon name="person"></ion-icon>
-    <ion-label class="label-header">Login</ion-label>
+    <ion-label class="label-header" >Login</ion-label>
   </div>
     |
-    <div style="padding-left: 15px;">
+    <div style="padding-left: 15px;" [routerLink]="['/signup']" >
       <ion-icon name="pencil"></ion-icon>
       <ion-label >Cadastro</ion-label>
     </div>
@@ -19,23 +20,23 @@
     
   
     
-    <ion-button fill="clear">Home</ion-button>
+    <ion-button fill="clear" [routerLink]="['/onboarding']">Home</ion-button>
     
     <ion-list class="lista-dropdown">
      
         <ion-select interface="popover" placeholder="A Coopeere">
-          <ion-select-option value="apples">Quem somos?</ion-select-option>
-          <ion-select-option value="oranges">Nossos objetivos</ion-select-option>
-          <ion-select-option value="bananas">A equipe</ion-select-option>
+          <ion-select-option value="apples" [routerLink]="['/quemsomos']" >Quem somos?</ion-select-option>
+          <ion-select-option value="oranges" [routerLink]="['/objetivos']">Nossos objetivos</ion-select-option>
+          <ion-select-option value="bananas" [routerLink]="['/equipe']">A equipe</ion-select-option>
         </ion-select>
       
     </ion-list>
   
-    <ion-button fill="clear">Legalização</ion-button>
-    <ion-button fill="clear">Estatuto</ion-button>
-    <ion-button fill="clear">Vantagens</ion-button>
-    <ion-button fill="clear">Parceiros</ion-button>
-    <ion-button fill="clear">Fale Conosco</ion-button>
+    <ion-button fill="clear" [routerLink]="['/legalizacao']">Legalização</ion-button>
+    <ion-button fill="clear" [routerLink]="['/estatuto']">Estatuto</ion-button>
+    <ion-button fill="clear" [routerLink]="['/vantagens']">Vantagens</ion-button>
+    <ion-button fill="clear" [routerLink]="['/parceiros']">Parceiros</ion-button>
+    <ion-button fill="clear" [routerLink]="['/faleconosco']">Fale Conosco</ion-button>
   
   </ion-header>
   
@@ -50,75 +51,63 @@
     </div>
 
 <ion-slides pager="true" [options]="slideOpts">
+  
   <ion-slide>
-    
     <img src="https://images.wallpaperscraft.com/image/single/people_silhouettes_sunset_lake_mountains_116988_2560x1440.jpg">
   
     <h1>O que nossos jovens esperam do futuro?</h1>
-    <button>Cadastre-Se</button>
-    
-  
+    <button [routerLink]="['/signup']">Cadastre-Se</button>  
   </ion-slide>
+
   <ion-slide>
     <img src="https://ariehalpern.com.br/wp-content/uploads/2021/07/blog12dejulhode2021.jpg">
 
     <h1>O que a sociedade espera dos nossos goverantes?</h1>
-    <button>Cadastre-Se</button>
-    
-  
-
+    <button [routerLink]="['/signup']">Cadastre-Se</button>
   </ion-slide>
+
   <ion-slide>
     <img src="https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg?cs=srgb&dl=pexels-kellie-churchman-1001682.jpg&fm=jpg">
    
     <h1>O que nossos jovens esperam do futuro?</h1>
-    <button>Cadastre-Se</button>
-    
-  
-  
+    <button [routerLink]="['/signup']">Cadastre-Se</button>  
   </ion-slide>
 
-</ion-slides>
 
-  </ion-content>
+  <ion-slide>
+    <img src="https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg?cs=srgb&dl=pexels-kellie-churchman-1001682.jpg&fm=jpg">
+   
+    <h1>ÚLTIMO SLIDE</h1>
+    <button [routerLink]="['/signup']">Cadastre-Se</button>  
+  </ion-slide>
 
-  <!--
-  <div class="carousel">
 
-    <div class="slide">
-      <ion-img src="https://media.gazetadopovo.com.br/2019/06/08112107/energia-eolica-660x372.jpg"></ion-img>
-    </div>
+  </ion-slides>
+
+</ion-content>
+
+
+  <ion-footer class="footer"> 
     
-    <div class="slide">
-      <ion-img src="https://media.gazetadopovo.com.br/2019/06/08112107/energia-eolica-660x372.jpg"></ion-img>
-    </div>
-    
-    <div class="slide">
-      <ion-img src="https://media.gazetadopovo.com.br/2019/06/08112107/energia-eolica-660x372.jpg"></ion-img>
-    </div>
-    
-          </div>
-        -->
-
-
-
-  <ion-footer class="footer">
-  
+    <ion-label style="padding-left: 15px;" >Made With <ion-icon name="heart"></ion-icon> by Makrom / TripleAVB</ion-label>
   
     <div class="menu-footer">
-      
-    
-    <ion-label>Eventos</ion-label>
-    <ion-label>Publicações</ion-label>
-    <ion-label>Agenda</ion-label>
-    <ion-label>Galeria de Fotos</ion-label>
-    <ion-label>Fale Conosco</ion-label>
+      <ion-label [routerLink]="['/eventos']">Eventos</ion-label>
+      <ion-label [routerLink]="['/publicacoes']">Publicações</ion-label>
+      <ion-label [routerLink]="['/agenda']">Agenda</ion-label>
+      <ion-label [routerLink]="['/galeria']" >Galeria de Fotos</ion-label>
+      <ion-label [routerLink]="['/faleconosco']">Fale Conosco</ion-label>
     </div>
   
     <div class="social-media-icons">
-      <ion-label>Facebook</ion-label>
-      <ion-label>Instagram</ion-label>
-      <ion-label>Youtube</ion-label>
+
+<!-- ROUTER LINKS NÃO FUNCIONAM COM LINKS DE VERDADE  -->
+
+<!-- MAS DEU PRA RESOLVER USANDO UMA FUNÇÃO COM TYPESCRIPT -->
+      
+      <ion-label (click)="openExternalLinkFacebook()"> <strong>Facebook</strong> </ion-label>
+      <ion-label (click)="openExternalLinkInstagram()"> <strong>Instagram</strong> </ion-label>
+      <ion-label (click)="openExternalLinkYouTube()"> <strong>Youtube</strong> </ion-label>
     </div>
     
     

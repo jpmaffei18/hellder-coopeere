@@ -15,6 +15,17 @@ export class OnboardingPage  {
   };
 
   constructor() {}
+
+  openExternalLinkFacebook(){
+    window.open('https://www.facebook.com', '_blank')
+  }
   
+  openExternalLinkInstagram(){
+    window.open('https://www.instagram.com', '_blank')
+  }
+
+  openExternalLinkYouTube(){
+    window.open('https://www.youtube.com', '_blank')
+  }
 
 }
