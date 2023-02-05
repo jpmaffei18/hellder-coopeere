@@ -24,10 +24,10 @@
     
     <ion-list class="lista-dropdown">
      
-        <ion-select interface="popover" placeholder="A Coopeere">
-          <ion-select-option value="apples" [routerLink]="['/quemsomos']" >Quem somos?</ion-select-option>
-          <ion-select-option value="oranges" [routerLink]="['/objetivos']">Nossos objetivos</ion-select-option>
-          <ion-select-option value="bananas" [routerLink]="['/equipe']">A equipe</ion-select-option>
+        <ion-select interface="popover" placeholder="A Coopeere" [(ngModel)]="selectedOption"  (ionChange)="onOptionSelected(selectedOption)">
+          <ion-select-option [value]="'1'" [routerLink]="['/quemsomos']" >Quem somos?</ion-select-option>
+          <ion-select-option [value]="'2'" [routerLink]="['/objetivos']">Nossos objetivos</ion-select-option>
+          <ion-select-option [value]="'3'" [routerLink]="['/equipe']">A equipe</ion-select-option>
         </ion-select>
       
     </ion-list>
