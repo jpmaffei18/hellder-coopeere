@@ -29,7 +29,8 @@ const routes: Routes = [
   {
     path: 'signup',
     loadChildren: () => import('./pages/signup/signup.module').then( m => m.SignupPageModule)
-  },  {
+  },
+  {
     path: 'onboarding',
     loadChildren: () => import('./pages/onboarding/onboarding.module').then( m => m.OnboardingPageModule)
   },
@@ -45,12 +46,9 @@ const routes: Routes = [
     path: 'equipe',
     loadChildren: () => import('./pages/equipe/equipe.module').then( m => m.EquipePageModule)
   },
+
   {
-    path: 'legalizacao',
-    loadChildren: () => import('./pages/legalizacao/legalizacao.module').then( m => m.LegalizacaoPageModule)
-  },
-  {
-    path: 'estatuto',
+    path: 'estatuto', //
     loadChildren: () => import('./pages/estatuto/estatuto.module').then( m => m.EstatutoPageModule)
   },
   {
@@ -80,6 +78,10 @@ const routes: Routes = [
   {
     path: 'publicacoes',
     loadChildren: () => import('./pages/publicacoes/publicacoes.module').then( m => m.PublicacoesPageModule)
+  },
+  {
+    path: 'legislacao',
+    loadChildren: () => import('./pages/legislacao/legislacao.module').then( m => m.LegislacaoPageModule)
   }
 
 ];

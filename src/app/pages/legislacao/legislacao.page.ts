@@ -2,13 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-parceiros',
-  templateUrl: './parceiros.page.html',
-  styleUrls: ['./parceiros.page.scss'],
+  selector: 'app-legislacao',
+  templateUrl: './legislacao.page.html',
+  styleUrls: ['./legislacao.page.scss'],
 })
-export class ParceirosPage implements OnInit {
+export class LegislacaoPage implements OnInit {
 
-  
+
+
   selectedOption: string = '';
  
   constructor(private router: Router) {}

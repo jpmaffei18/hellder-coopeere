@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-estatuto',
@@ -6,10 +7,42 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./estatuto.page.scss'],
 })
 export class EstatutoPage implements OnInit {
+  selectedOption: string = '';
+ 
+  constructor(private router: Router) {}
 
-  constructor() { }
+  goToPage(option: string) {
+    switch (option) {
+      case 'option1':
+        this.router.navigateByUrl('/option1');
+        break;
+      case 'option2':
+        this.router.navigateByUrl('/option2');
+        break;
+      case 'option3':
+        this.router.navigateByUrl('/option3');
+        break;
+      default:
+        break;
+    }
 
-  ngOnInit() {
   }
+
+openExternalLinkFacebook(){
+  window.open('https://www.facebook.com', '_blank')
+}
+
+openExternalLinkInstagram(){
+  window.open('https://www.instagram.com', '_blank')
+}
+
+openExternalLinkYouTube(){
+  window.open('https://www.youtube.com', '_blank')
+}
+
+ngOnInit(): void{
+
+}
+
 
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-onboarding',
@@ -16,32 +17,26 @@ export class OnboardingPage implements OnInit  {
   };
 
 
-  selectedOption: string;
-  
-  constructor(private navCtrl: NavController) {
-    this.selectedOption = "1";
+  selectedOption: string = '';
+ 
+  constructor(private router: Router) {}
 
-   
-  }
-
-
-  onOptionSelected(option: string) {
-    
+  goToPage(option: string) {
     switch (option) {
-      case "1":
-        this.navCtrl.navigateForward('/quemsomos');
+      case 'option1':
+        this.router.navigateByUrl('/option1');
         break;
-      case "2":
-        this.navCtrl.navigateForward('/objetivos');
+      case 'option2':
+        this.router.navigateByUrl('/option2');
         break;
-      case "3":
-        this.navCtrl.navigateForward('/equipe');
-          break;  
+      case 'option3':
+        this.router.navigateByUrl('/option3');
+        break;
+      default:
+        break;
     }
 
-}
-
-
+  }
 
 openExternalLinkFacebook(){
   window.open('https://www.facebook.com', '_blank')
