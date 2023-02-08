@@ -1,0 +1,48 @@
+Catalogado em https://documentacao.senior.com.br/bancodesolucoes/edocs/17136.htm
+
+Caso tenha o erro E160 ao cancelar a NFS-e, provavelmente algum dos dados do prestador ou da nota a ser cancelada ficou errado.
+Para que saiba o erro real é preciso acessar o sistema do município e verificar o erro
+
+# #######################################################
+
+GINFES: E160 - Arquivo enviado fora da estrutura do arquivo XML de Entrada
+Solução cadastrada/revisada em: 20/05/2021
+
+ID: 17136
+
+Caminho: Emissão > Notas fiscais
+
+Problema: Ao ser enviado um RPS (Recibo Provisório de Serviço) para prefeitura para ser convertido em NFS-e (Nota Fiscal Eletrônica de Serviço Eletrônica), a Prefeitura, que utiliza fornecedor Ginfes, gera a seguinte rejeição "E160 - Arquivo enviado fora da estrutura do arquivo XML de Entrada".
+
+Ao ser validado o arquivo XML com base nos XSDs disponibilizados pelo fornecedor, o arquivo é considerado válido.
+
+Rotina / Tela: emissão de NFS-e via WebService para Prefeitura atendida pelo fornecedor Ginfes.
+
+Solução: O fornecedor Ginfes está desde o mês de maio/2016 com problemas no processamento de RPS enviados para seu WebService. Estes problemas dizem respeito ao WebService do fornecedor Ginfes retornar a mensagem de rejeição "E160 - Arquivo enviado fora da estrutura do arquivo XML de Entrada" em situações onde a mensagem não deveria ser retornada.
+
+Erros já catalogados pelo Suporte da Senior com base na mensagem de rejeição "E160 - Arquivo enviado fora da estrutura do arquivo XML de Entrada" retornada pela Ginfes:
+
+Situação 1) Ao invés da Ginfes retornar a real mensagem de rejeição do RPS que foi enviado, a Ginfes retorna a mensagem padrão de rejeição "E160 - Arquivo enviado fora da estrutura do arquivo XML de Entrada".
+
+Situação 2) Ao invés da Ginfes retornar que o RPS foi autorizado e foi convertido em NFS-e, a Ginfes retorna a mensagem de rejeição "E160 - Arquivo enviado fora da estrutura do arquivo XML de Entrada" incorretamente.
+Situação 3) Ao invés da Ginfes retornar o exato problema no XML (exemplo: campo de telefone com mais caracteres que o previsto), é retornada a mensagem "E160 - Arquivo enviado fora da estrutura do arquivo XML de Entrada".
+
+O que poderá ser feito para contornar o problema:
+
+Nas situações 1 e 2 reportadas acima, é necessário acessar o site da Prefeitura, e consultar o status do lote do RPS enviado, buscando informação do real motivo da Rejeição do RPS enviado, ou buscando informação se o RPS foi efetivamente autorizado.
+Caso tenha havido uma Rejeição, pelo site da Prefeitura será possível identificar o real motivo da Rejeição, para que então o responsável pelo faturamento posa efetuar o ajuste necessário no RPS e emita-o novamente pelo ERP.
+Caso o RPS tenha sido autorizado, então pode-se utilizar o botão "Consultar" presente na tela "NFS-e > Emissão > aba Notas Fiscais" do Monitor do eDocs, inserindo o código de verificação da NFS-e para que o RPS fique com status de "Emitida" e haja retorno deste status para o ERP.
+
+Documentação auxiliar sobre a consulta de Lotes no sistema da Ginfes: Verificar lotes de RPS
+
+
+Para validar se o XML que foi enviado para a Prefeitura realmente é válido (situação 3) ou identificar qual a eventual falha no XML, pode-se considerar essa documentação: Validar XMLs com XSDs
+Importante:
+- O XML a ser validado é o mesmo que foi enviado para a Prefeitura (coletar o Log XML no eDocs)
+
+
+Salientamos que, esta situação é um problema no sistema do fornecedor Ginfes, que envia retornos incorretos pelo seu WebService. Caso haja dúvidas se o arquivo XML enviado para a Ginfes é realmente válido, basta coletar o arquivo XML enviado pelo sistema eDOcs para a Ginfes através da rotina de "Logs XML" do eDocs e efetuar a validação do XML com base no XSD disponibilizado pela própria Ginfes.
+
+Para que a situação seja resolvida, indicamos que o contribuinte que esteja tendo este problema entre em contato com a Prefeitura ou com o fornecedor Ginfes.
+
+Observação: em algumas ocasiões, o fornecedor Ginfes insiste que a situação é um problema no XML enviado. No entanto, deve-se enviar o XML gerado pelo eDocs (log XML) para a Ginfes para comprovar que o XML é válido.

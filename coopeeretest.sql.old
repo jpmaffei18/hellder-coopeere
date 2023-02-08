@@ -1,0 +1,34 @@
+create table tablogin (idusuario integer not null auto_increment primary key,
+email_login varchar(100), senha varchar(10), confirma_senha varchar(10),
+cpf_cnpj varchar(255), telefone varchar(25));
+
+create table taboperadora (idoperadora integer not null auto_increment primary key,
+nome varchar(255));
+
+create table tabcooperado (idcooperado integer not null auto_increment primary key,
+tipo varchar(100), nome varchar(255),
+endereco varchar(255), bairro varchar(255), cidade varchar(255),
+estado varchar(2), cpf_cnpj varchar(25), idoperadora integer,
+Tipo_conta varchar(255), sorteio integer,
+CONSTRAINT fk_idoperadora FOREIGN KEY (idoperadora) REFERENCES taboperadora (idoperadora));
+
+create table tabarquivo (idarquivo integer not null auto_increment primary key,
+do_conta BLOB,cpf_cnpj varchar(25), doc_comprovante BLOB); 
+
+create table tabmensalidades (idmensalidades integer not null auto_increment primary key,
+tipo varchar(25), dt_vencimento date, valor decimal(10,2), 
+dt_pagamento date, valorpago decimal(10,2), ndocumento varchar(25),
+cpf_cnpj varchar(25));
+
+create table tabprodist (idtabprodist integer not null auto_increment primary key,
+idoperadoraprodist integer, idcooperadoprodist integer, codigo_uc integer, classe_uc varchar(45),
+menor_consumo decimal (10,2), maior_consumo decimal (10,2), cota_comprada decimal (10,2),
+saldo_cota decimal (10,2),potencia_inst decimal (10,2), tensao decimal (10,2),
+tipo_conexao varchar(25), tipo_ramal varchar(25), consumo_KM_lista varchar(25), 
+lista_atual integer, statusreg char(1));
+
+ALTER TABLE tabprodist
+ADD CONSTRAINT fk_idoperadoraprodist FOREIGN KEY (idoperadoraprodist) REFERENCES taboperadora (idoperadora);
+
+ALTER TABLE tabprodist
+ADD CONSTRAINT fk_idcooperadoprodist FOREIGN KEY (idoperadoraprodist) REFERENCES tabcooperado (idcooperado);

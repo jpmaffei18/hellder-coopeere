@@ -1,0 +1,222 @@
+@extends('layouts.template')
+@section('title', 'Editar Formulário Prodist')
+@section('content')
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
+
+<div class="container mt-4">
+    <form method="POST" action="{{route('prodist.insert')}}">
+        @csrf
+        @method('put')
+
+        <h3>1 - Identificação da Unidade Consumidora</h3>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="nome">Nome</label>
+                    <input type="text" class="form-control" id="" readonly  name="nome" value="{{$cooperado->nome}}" required>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="cpf_cnpj">CPF/CNPJ</label>
+                    <input type="text" class="form-control" readonly id="cpfcnpj" name="cpf_cnpj" value="{{$cooperado->cpf_cnpj}}" size="15" required>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="cep">CEP</label>
+                    <input type="text" class="form-control" readonly id="cep" name="cep"  value="{{$cooperado->cep}}" size="10" required >
+                </div>
+            </div>
+        </div>
+    
+
+        <div class="row">
+            
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="endereco">Endereço</label>
+                    <input type="text" class="form-control" readonly id="endereco" name="endereco" value="{{$cooperado->endereco}}" required>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="numero">Número</label>
+                    <input type="text" class="form-control" readonly id="numero" name="numero" value="{{$cooperado->numero}}" required>
+                </div>
+            </div>
+            </div>
+            <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="bairro">Bairro</label>
+                    <input type="text" class="form-control" readonly id="bairro" name="bairro" value="{{$cooperado->bairro}}" required>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="cidade">Cidade</label>
+                    <input type="text" class="form-control" readonly id="cidade" name="cidade" value="{{$cooperado->cidade}}" required>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="estado">Estado</label>
+                    <input type="text" class="form-control" readonly id="estado" name="estado"  value="{{$cooperado->estado}}" required>
+                </div>
+            </div>
+        </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="telefone">Telefone</label>
+                <input type="text" class="form-control" readonly id="fone" name="telefone"  value="{{$cooperado->usuario->telefone}}"   size="16" required>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="nome">Email</label>
+                <input type="text" class="form-control" readonly id="" name="email" readonly value="{{$cooperado->usuario->email}}" required>
+            </div>
+        </div>
+    </div>
+
+ 
+            <div class="row">
+                
+                <div class="form-group">
+                    <label for="codigo_uc">Código UC</label>
+                    <input type="text" class="form-control" id="codigo_uc"  name="codigo_uc" size="15" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="classe_uc">Classe UC</label>
+                    <input type="text" class="form-control" id="classe_uc" name="classe_uc" size="15" required>
+                  </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group">
+                    <label for="numero_do_cliente">Número do Cliente</label>
+                    <input type="text" class="form-control" id="numero_do_cliente" name="numero_do_cliente" size="15" required>
+                  </div>
+            </div>
+
+            
+
+            <h3>2 - Dados da Unidade Consumidora</h3>
+            <div class="row">
+                <div class="form-group">
+                    <label for="cota_comprada">Cota (em kWh) deseja comprar mensalmente. Preço estimado em 50% menor do que a operadora.</label>
+                    <input type="text" class="form-control" id="cota_comprada" name="cota_comprada"  size="15">
+                  </div>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    <label for="potencia_inst_uc">Potencia instalada (kW)</label>
+                    <input type="text" class="form-control" id="potencia_inst_uc" name="potencia_inst_uc" size="15" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="tensao">Tensão de atendimento (V)</label>
+                    @foreach($tensaoatendimento as $item)
+                    <?php $checked = '';
+                    if($item->tensao == 110)
+                    {
+                        $checked = 'checked';
+                    }
+                    ?>
+                    <input type="radio" id="tensao{{$item->tensao}}" {{$checked}} name="tensao_atendimento" value="{{$item->tensao}}">
+                    <label for="tensao{{$item->tensao}}">{{$item->tensao}}V</label>
+                    @endforeach
+                  </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group">
+                    <label for="tipo_conexao">Tipo de conexão</label>
+                    <select name="tipo_conexao" id="tipo_conexao">
+                        @foreach($tipoconexao as $item)
+                        <?php $selected = '';
+                        if($item->tipo == 'monofásica')
+                        {
+                            $selected = 'selected';
+                        }
+                        ?>
+                        <option value="{{$item->tipo}}" {{$selected}} >{{$item->tipo}}</option>
+                        @endforeach
+                    </select>
+                  </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group">
+                    <label for="tipo_ramal">Tipo de Ramal</label>
+                    <select name="tipo_ramal" id="tipo_ramal">
+                        @foreach($tiporamal as $item)
+                        <?php $selected = '';
+                        if($item->tipo == 'aérea')
+                        {
+                            $selected = 'selected';
+                        }
+                        ?>
+                        <option value="{{$item->tipo}}" {{$selected}} >{{$item->tipo}}</option>
+                        @endforeach
+                    </select>
+                  </div>
+            </div>
+
+            <h3>3 - Dados da Geração</h3>
+
+            <div class="row">
+                <div class="form-group">
+                    <label for="potencia_inst_gerada">Potencia instalada (kW) gerada</label>
+                    <input type="text" class="form-control" id="potencia_inst_gerada" name="potencia_inst_gerada" size="15" required>
+                  </div>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    <label for="tipo_fonte_geracao">Tipo da Fonte de Geração</label>
+                    <select name="tipo_fonte_geracao" id="tipo_fonte_geracao">
+                        @foreach($tipofontegeracao as $item)
+                        <?php $selected = '';
+                        if($item->tipo == 'eólica')
+                        {
+                            $selected = 'selected';
+                        }
+                        ?>
+                        <option value="{{$item->tipo}}" {{$selected}} >{{$item->tipo}}</option>
+                        @endforeach
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group">
+                    <label for="menor_consumo">Menor consumo (em kWh) dos últimos 12 meses</label>
+                    <input type="text" class="form-control" id="menor_consumo" name="menor_consumo" size="15" required>
+                  </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group">
+                    <label for="maior_consumo">Maior consumo (em kWh) dos últimos 12 meses</label>
+                    <input type="text" class="form-control" id="maior_consumo" name="maior_consumo" size="15" required>
+                  </div>
+            </div>
+   
+        <button type="submit" class="btn btn-primary">Salvar</button>
+    </form>
+</div>
+@endsection

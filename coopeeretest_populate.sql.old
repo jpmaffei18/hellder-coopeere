@@ -1,0 +1,6 @@
+insert into tabemailconfig(id,email_remetente,servidor,porta,usuario,senha,tls) values (1,'backup@upwaynetwork.com.br','mail.upwaynetwork.com.br',587,'backup@upwaynetwork.com.br','b4ckup2k20',true);
+insert into tabusuario (id,email, nivel, senha, token, cpf_cnpj, telefone, email_verificado_em,created_at,updated_at) values (1,'admin@gmail.com','admin','senha','xxx','11111111111','22998680582','2021-05-20 14:50:00','2021-05-15','2021-05-15');
+insert into tabusuario (id,email, nivel, senha, token, cpf_cnpj, telefone, email_verificado_em,created_at,updated_at) values (2,'tulioap@gmail.com','user','senha','xxx','08796011750','22998698455','2021-05-20 14:54:57','2021-05-15','2021-05-15');
+insert into taboperadora (id,nome,created_at,updated_at) values (1,'Enel-RJ','2021-05-20','2021-05-15');
+insert into taboperadora (id,nome,created_at,updated_at) values (2,'Light','2021-05-20','2021-05-15');
+insert into tabcooperado (id,tipo,nome,cep,endereco,bairro,cidade,estado,cpf_cnpj,idoperadora,Tipo_conta,sorteio,status,created_at,updated_at) values (1,'PF','Túlio AP','28220-000','Rua Gregorio','Barcelos','São João da Barra','RJ','08796011750',1,'PF',10,null,'2021-05-15','2021-05-15');

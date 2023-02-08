@@ -1,0 +1,95 @@
+@import 'bootstrap';
+@import 'variables';
+@import 'animate.css';
+@import 'hamburgers';
+@import 'login';
+@import 'tabs';
+@import 'painel';
+@import 'form';
+@import 'pagamento';
+@import 'triagem';
+
+body {
+	font-family: 'Nunito', sans-serif;
+  background: #EFF6FF;
+}
+
+.navbar-brand {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+	width: 200px;
+
+	span {
+		font-size: .75rem;
+		font-weight: bold;
+		color: #0859a8;
+	}
+
+	@include media-breakpoint-down(sm) {
+		width: 160px;
+	}
+}
+
+.nav-usuario {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  @media (max-width: 576px) {
+    align-items: stretch;
+    width: 100%;
+  }
+}
+.nav-exit {
+  @media (max-width: 576px) {
+    position: absolute;
+    right: 4px;
+    top: 4px;
+  }
+}
+
+.usuario {
+  background: white;
+  border-radius: .5rem;
+  padding: .5rem 1rem;
+  --tw-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  box-shadow: var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow);
+
+	&-nome {
+		text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: bold;
+	}
+
+	&-dados {
+    font-size: .75rem;
+    color: #5f5f5f;
+  }
+
+	&-documento {
+    white-space: nowrap;
+  }
+
+  @media (max-width: 576px) {
+    display: flex;
+    flex-flow: row;
+    padding: .25rem .5rem;
+    align-items: center;
+    justify-content: space-between;
+
+    .flex {
+      display: contents;
+    }
+  }
+}
+
+.btn-link.dropdown-toggle {
+	font-size: 1.25rem;
+	color: black;
+	text-decoration: unset;
+}
+
+.btn-sm.dropdown-toggle {
+  font-size: .75rem;
+  line-height: 1;
+}

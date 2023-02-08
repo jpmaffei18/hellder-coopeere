@@ -1,0 +1,9 @@
+tabcooperado
+tipo:
+cadastrado
+tem conta? 
+   cooperado_titular (se for titular)
+   cooperado_apoiador (se nao for titular)
+tipo_conta 
+
+
