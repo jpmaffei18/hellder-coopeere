@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+import { UsuarioService } from 'src/app/services/usuario.service';
+import { NavController } from '@ionic/angular';
+import { Login } from 'src/app/interfaces/login';
 
 @Component({
   selector: 'app-login',
@@ -7,9 +12,46 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginPage implements OnInit {
 
-  constructor() { }
+  constructor(
+    private formBuilder:  FormBuilder,
+    private usersService: UsuarioService,
+    public navCtrl: NavController,
+  ) { }
 
-  ngOnInit() {
+  login: Login = {
+    usuario: "",
+    senha: ""
   }
 
+  ngOnInit(): void {
+    this.validaForm();
+  }
+  
+  formulariologin!: FormGroup;
+
+  validaForm(){
+    this.formulariologin = this.formBuilder.group({
+      usuario: ['', [Validators.required]],
+      senha: ['', [Validators.required]]
+    });
+  }
+  
+    onSubmit() {
+    const body = {
+      username: this.login.usuario,
+      password: this.login.senha
+    };
+    this.usersService.login(body)
+    .subscribe({
+    next: (res) => {
+    console.log(res);
+    console.log('Usuário autenticado.')
+    this.navCtrl.navigateForward('/inicio');
+    },
+    error: (e) => {
+      console.error(e)
+      console.log("Dados Enviados", body);
+    }
+    });
+  }
 }

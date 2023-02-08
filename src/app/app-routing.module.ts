@@ -82,6 +82,14 @@ const routes: Routes = [
   {
     path: 'legislacao',
     loadChildren: () => import('./pages/legislacao/legislacao.module').then( m => m.LegislacaoPageModule)
+  },
+  {
+    path: 'mapa',
+    loadChildren: () => import('./pages/mapa/mapa.module').then( m => m.MapaPageModule)
+  },
+  {
+    path: 'inicio',
+    loadChildren: () => import('./pages/inicio/inicio.module').then( m => m.InicioPageModule)
   }
 
 ];
