@@ -17,6 +17,16 @@ export class OnboardingPage implements OnInit  {
   };
 
 
+  slideOpts2 = {
+    autoplay: {
+      delay: 4000
+    },
+    slidesPerView: 5,
+    spaceBetween: 10,
+    loop: true
+  };
+
+
   selectedOption: string = '';
  
   constructor(private router: Router) {}

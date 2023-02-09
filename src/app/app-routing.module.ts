@@ -90,6 +90,142 @@ const routes: Routes = [
   {
     path: 'inicio',
     loadChildren: () => import('./pages/inicio/inicio.module').then( m => m.InicioPageModule)
+  },
+  {
+    path: 'pagamentos',
+    loadChildren: () => import('./pages/pagamentos/pagamentos.module').then( m => m.PagamentosPageModule)
+  },
+  {
+    path: 'logout',
+    loadChildren: () => import('./pages/logout/logout.module').then( m => m.LogoutPageModule)
+  },
+  {
+    path: 'hellder-benjamin',
+    loadChildren: () => import('./pages/integrantes/hellder-benjamin/hellder-benjamin.module').then( m => m.HellderBenjaminPageModule)
+  },
+  {
+    path: 'joao-paulo-cunha',
+    loadChildren: () => import('./pages/integrantes/joao-paulo-cunha/joao-paulo-cunha.module').then( m => m.JoaoPauloCunhaPageModule)
+  },
+  {
+    path: 'vanda-maria',
+    loadChildren: () => import('./pages/integrantes/vanda-maria/vanda-maria.module').then( m => m.VandaMariaPageModule)
+  },
+  {
+    path: 'pryscilla-ferreira',
+    loadChildren: () => import('./pages/integrantes/pryscilla-ferreira/pryscilla-ferreira.module').then( m => m.PryscillaFerreiraPageModule)
+  },
+  {
+    path: 'elton-vieira',
+    loadChildren: () => import('./pages/integrantes/elton-vieira/elton-vieira.module').then( m => m.EltonVieiraPageModule)
+  },
+  {
+    path: 'adalberto-oliveira',
+    loadChildren: () => import('./pages/integrantes/adalberto-oliveira/adalberto-oliveira.module').then( m => m.AdalbertoOliveiraPageModule)
+  },
+  {
+    path: 'roberto-silva',
+    loadChildren: () => import('./pages/integrantes/roberto-silva/roberto-silva.module').then( m => m.RobertoSilvaPageModule)
+  },
+  {
+    path: 'felipe-godoy',
+    loadChildren: () => import('./pages/integrantes/felipe-godoy/felipe-godoy.module').then( m => m.FelipeGodoyPageModule)
+  },
+  {
+    path: 'marco-antonio-andrade',
+    loadChildren: () => import('./pages/integrantes/marco-antonio-andrade/marco-antonio-andrade.module').then( m => m.MarcoAntonioAndradePageModule)
+  },
+  {
+    path: 'auner-pereira-carneiro',
+    loadChildren: () => import('./pages/integrantes/auner-pereira-carneiro/auner-pereira-carneiro.module').then( m => m.AunerPereiraCarneiroPageModule)
+  },
+  {
+    path: 'samil-alberto',
+    loadChildren: () => import('./pages/integrantes/samil-alberto/samil-alberto.module').then( m => m.SamilAlbertoPageModule)
+  },
+  {
+    path: 'liliam-benjamin',
+    loadChildren: () => import('./pages/integrantes/liliam-benjamin/liliam-benjamin.module').then( m => m.LiliamBenjaminPageModule)
+  },
+  {
+    path: 'karina-almeida',
+    loadChildren: () => import('./pages/integrantes/karina-almeida/karina-almeida.module').then( m => m.KarinaAlmeidaPageModule)
+  },
+  {
+    path: 'luciana-ribeiro',
+    loadChildren: () => import('./pages/integrantes/luciana-ribeiro/luciana-ribeiro.module').then( m => m.LucianaRibeiroPageModule)
+  },
+  {
+    path: 'sueli-silva',
+    loadChildren: () => import('./pages/integrantes/sueli-silva/sueli-silva.module').then( m => m.SueliSilvaPageModule)
+  },
+  {
+    path: 'jovana-patricia',
+    loadChildren: () => import('./pages/integrantes/jovana-patricia/jovana-patricia.module').then( m => m.JovanaPatriciaPageModule)
+  },
+  {
+    path: 'erica-gomes',
+    loadChildren: () => import('./pages/integrantes/erica-gomes/erica-gomes.module').then( m => m.EricaGomesPageModule)
+  },
+  {
+    path: 'erica-gomess',
+    loadChildren: () => import('./pages/integrantes/erica-gomess/erica-gomess.module').then( m => m.EricaGomessPageModule)
+  },
+  {
+    path: 'erica-gomes',
+    loadChildren: () => import('./pages/integrantes/erica-gomes/erica-gomes.module').then( m => m.EricaGomesPageModule)
+  },
+  {
+    path: 'nilcineia-silva',
+    loadChildren: () => import('./pages/integrantes/nilcineia-silva/nilcineia-silva.module').then( m => m.NilcineiaSilvaPageModule)
+  },
+  {
+    path: 'neusimar-hora',
+    loadChildren: () => import('./pages/integrantes/neusimar-hora/neusimar-hora.module').then( m => m.NeusimarHoraPageModule)
+  },
+  {
+    path: 'eber-john',
+    loadChildren: () => import('./pages/integrantes/eber-john/eber-john.module').then( m => m.EberJohnPageModule)
+  },
+  {
+    path: 'ilidia-campos',
+    loadChildren: () => import('./pages/integrantes/ilidia-campos/ilidia-campos.module').then( m => m.IlidiaCamposPageModule)
+  },
+  {
+    path: 'josely-oliveira',
+    loadChildren: () => import('./pages/integrantes/josely-oliveira/josely-oliveira.module').then( m => m.JoselyOliveiraPageModule)
+  },
+  {
+    path: 'luis-carlos',
+    loadChildren: () => import('./pages/integrantes/luis-carlos/luis-carlos.module').then( m => m.LuisCarlosPageModule)
+  },
+  {
+    path: 'cidineia-rocha',
+    loadChildren: () => import('./pages/integrantes/cidineia-rocha/cidineia-rocha.module').then( m => m.CidineiaRochaPageModule)
+  },
+  {
+    path: 'marco-aurelio-dutra',
+    loadChildren: () => import('./pages/integrantes/marco-aurelio-dutra/marco-aurelio-dutra.module').then( m => m.MarcoAurelioDutraPageModule)
+  },
+  {
+    path: 'alcilea-santos',
+    loadChildren: () => import('./pages/integrantes/alcilea-santos/alcilea-santos.module').then( m => m.AlcileaSantosPageModule)
+  },
+  {
+    path: 'andral-nunes',
+    loadChildren: () => import('./pages/integrantes/andral-nunes/andral-nunes.module').then( m => m.AndralNunesPageModule)
+  },
+  {
+    path: 'mario-terra-filho',
+    loadChildren: () => import('./pages/integrantes/mario-terra-filho/mario-terra-filho.module').then( m => m.MarioTerraFilhoPageModule)
+  },
+  {
+    path: 'maria-geni-almeida',
+    loadChildren: () => import('./pages/integrantes/maria-geni-almeida/maria-geni-almeida.module').then( m => m.MariaGeniAlmeidaPageModule)
+  },
+  {
+    path: 'wallace-randolph',
+    loadChildren: () => import('./pages/integrantes/wallace-randolph/wallace-randolph.module').then( m => m.WallaceRandolphPageModule)
   }
 
 ];

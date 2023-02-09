@@ -57,14 +57,18 @@ ngOnInit(): void{
   this.validaForm();
 }
 
+
+
+
 usuario: Usuario = {
   id: 0,
-  usuario: "",
+  
   name: "",
-  bday: date,
+  s_name: "",
+  bday: null,
   genre: "",
   cpfcnpj: 0,
-  secondname: "",
+  
   phonenumber: 0,
 
   cep: 0,
@@ -72,35 +76,34 @@ usuario: Usuario = {
     city: "",
     state: "",
 
-
+  usuario: "",
   email: "",
   senha: ""
 }
 
-/*
-    name: string;
-    secondname: string;
-    bday: Date;
-    genre: string;
-    cpfcnpj: number;
-    phonenumber: number;
-    cep: number;
-    address: string;
-    city: string;
-    state: string;
-        email: string;
-        username: string;
-        password: string;
 
-*/
 
 formulario!: FormGroup;
 
 validaForm(){
   this.formulario = this.formBuilder.group({
-    usuario: ['', [Validators.required]],
+    
     nome: ['', [Validators.required]],
+    sobrenome: ['', [Validators.required]],
+
+    nascimento: ['', [Validators.required]],
+    genero: ['', [Validators.required]],
+    cpfcnpj: ['', [Validators.required]],
     telefone: ['', [Validators.required]],
+    cep: ['', [Validators.required]],
+    endereco: ['', [Validators.required]],
+
+    
+
+    cidade: ['', [Validators.required]],
+    estado: ['', [Validators.required]],
+    
+    usuario: ['', [Validators.required]],
     email: ['', [Validators.required]],
     senha: ['', [Validators.required]]
   });
@@ -108,9 +111,18 @@ validaForm(){
 
 cadastro(): void{
   const data = {
-  usuario: this.usuario.usuario,
+
   nome: this.usuario.name,
+  sobrenome: this.usuario.s_name,
+  nascimento: this.usuario.s_name,
+  cpfcnpj: this.usuario.cpfcnpj,
   telefone: this.usuario.phonenumber,
+  cep: this.usuario.cep,
+  endereco: this.usuario.address,
+  cidade: this.usuario.city,
+  estado: this.usuario.state,
+
+  usuario: this.usuario.usuario,
   email: this.usuario.email,
   senha: this.usuario.senha
   };

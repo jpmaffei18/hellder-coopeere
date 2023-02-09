@@ -1,8 +1,8 @@
 export interface Usuario {
     id: number;
     name: string;
-    secondname: string;
-    bday: Date;
+    s_name: string;
+    bday: any;
     genre: string;
     cpfcnpj: number;
     phonenumber: number;
