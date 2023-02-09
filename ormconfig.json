@@ -1,6 +1,10 @@
 {
-  "database": "./db.sql",
-  "type": "sqlite",
-  "synchronize": true,
+  "database": "coopeere1",
+  "type": "mysql",
+  "host": "localhost",
+  "username" : "root",
+  "password" : "",
+  "synchronize": false,
   "entities": ["dist/**/*.model.js"]
 }
+
