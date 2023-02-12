@@ -30,28 +30,55 @@ ion-slide {
 
 ion-slide h1, ion-slide p {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 30%;
+    left: 35%;
     transform: translate(-50%, -50%);
-    text-align: flex-start;
-    font-size: 80px;
+    text-align:left;
+    font-size: 60px;
+    font-weight: bold;
     width: 50%;
+    text-shadow: 2px 2px 2px #000000;
+    min-width: 10%;
+    
 }
+
+@media (max-width: 767px) {
+   ion-slide h1 {
+       font-size: 18px;
+    }
+ }
+
+ @media (max-width: 1366px) {
+    ion-slide h1 {
+        font-size: 20px;
+     }
+  }
+ 
 
 ion-slide button {
 
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 30%;
+    left: 16%;
     transform: translate(-50%, -50%);
     text-align: center;
-    font-size: 30px;
-    width: 250px;
+    font-size: 20px;
+    width: 200px;
     margin-top: 200px;
     padding: 15px;
     border-radius: 50px;
     background-color: green;
 }
+
+@media (max-width: 767px) {
+    ion-slide button   {
+      width: 25%;
+      font-size: 70%;
+      position: absolute;
+      top: 0.5%;
+      left: 22%;
+    }
+ }
 
 
 .container {
@@ -202,4 +229,96 @@ ion-input {
 
   .dropdown-item:hover {
     background-color: #f1f1f1;
+  }
+
+  .text-slider-c {
+    text-align: left;
+
+  }
+
+
+  ion-header {
+   position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  //  z-index: 10;
+  
+    @media (max-width: 600px) {
+      ion-button {
+        display: none;
+      }
+
+      ion-header {
+        display: none;
+    }
+
+    ion-img {
+        display: none;
+    }
+
+    a { 
+        display: none;
+    }
+      
+    ion-icon {
+        display: none;
+    }
+
+    ion-label {
+        display: none;
+    }
+
+     div {
+        display: none;
+    }
+    
+    }
+
+    @media (min-width: 601px){
+
+    }
+
+  }
+
+  .header-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+  
+    @media (max-width: 600px) {
+      ion-button {
+        display: none;
+      }
+
+      ion-header {
+        display: none;
+    }
+
+    ion-img {
+        display: none;
+    }
+
+    a { 
+        display: none;
+    }
+      
+    ion-icon {
+        display: none;
+    }
+
+    ion-label {
+        display: none;
+    }
+
+     div {
+        display: none;
+    }
+    
+    }
+
+
+
   }

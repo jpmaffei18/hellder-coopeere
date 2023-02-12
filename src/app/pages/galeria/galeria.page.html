@@ -41,6 +41,14 @@
   
   
   <ion-content>
+
+    <ion-content [scrollEvents]="true">
+      <ion-slides #slides [options]="slideOpts">
+        <ion-slide *ngFor="let slide of slidesArray">
+          <img [src]="slide.src" alt="Imagem">
+        </ion-slide>
+      </ion-slides>
+    </ion-content>
     
   </ion-content>
 

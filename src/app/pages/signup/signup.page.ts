@@ -1,3 +1,6 @@
+
+
+
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -64,15 +67,17 @@ usuario: Usuario = {
   id: 0,
   
   name: "",
-  s_name: "",
+  
   bday: null,
   genre: "",
   cpfcnpj: 0,
-  
+  homenumber: 0,
   phonenumber: 0,
 
   cep: 0,
     address: "",
+    number: 0,
+    nhood: "",
     city: "",
     state: "",
 
@@ -95,12 +100,15 @@ validaForm(){
     genero: ['', [Validators.required]],
     cpfcnpj: ['', [Validators.required]],
     telefone: ['', [Validators.required]],
+    telefonefixo: ['', [Validators.required]],
     cep: ['', [Validators.required]],
     endereco: ['', [Validators.required]],
-
+    numero: ['', [Validators.required]],
     
 
     cidade: ['', [Validators.required]],
+    bairro: ['', [Validators.required]],
+    
     estado: ['', [Validators.required]],
     
     usuario: ['', [Validators.required]],
@@ -113,13 +121,17 @@ cadastro(): void{
   const data = {
 
   nome: this.usuario.name,
-  sobrenome: this.usuario.s_name,
-  nascimento: this.usuario.s_name,
+ 
+  nascimento: this.usuario.bday,
   cpfcnpj: this.usuario.cpfcnpj,
   telefone: this.usuario.phonenumber,
+  telefonefixo: this.usuario.homenumber,
   cep: this.usuario.cep,
   endereco: this.usuario.address,
+  numero: this.usuario.number,
+  
   cidade: this.usuario.city,
+  bairro: this.usuario.nhood,
   estado: this.usuario.state,
 
   usuario: this.usuario.usuario,
@@ -130,6 +142,7 @@ cadastro(): void{
   .subscribe({
   next: (res) => {
   console.log(res);
+  console.log("Usuário cadastrado com sucesso")
   this.navCtrl.navigateForward('/login');
   },
   error: (e) => console.error(e)

@@ -1,4 +1,11 @@
+
+
+
+<!-- -->
+
 <ion-header class="header-header">
+
+  
   
   <div [routerLink]="['/login']">
     <ion-icon name="person"></ion-icon>
@@ -16,14 +23,14 @@
   <ion-header class="header">
     
     
-      <ion-img style="max-width: 10%;" src="../../../assets/images/coopere.png"></ion-img>
+      <ion-img  [routerLink]="['/onboarding']"  style="max-width: 10%;" src="../../../assets/images-coopeere/coopere.png"></ion-img>
     
   
     
-    <ion-button fill="clear" [routerLink]="['/onboarding']">Home</ion-button>
+    <ion-button fill="clear" style="color: #000000; font-weight: bold; font-size: 15px; " [routerLink]="['/onboarding']">Home</ion-button>
     
     <div class="dropdown">
-      <a href="#">A COOPEERE</a>
+      <a [routerLink]="['/onboarding']"  style="color: #000000; font-weight: bold; font-size: 15px; ">A COOPEERE</a>
       <div class="dropdown-content">
         <a [routerLink]="['/quemsomos']" class="dropdown-item">Quem Somos?</a>
         <a [routerLink]="['/objetivos']" class="dropdown-item">Objetivo</a>
@@ -31,11 +38,11 @@
       </div>
     </div>
   
-    <ion-button fill="clear" [routerLink]="['/legislacao']">Legislação</ion-button>
-    <ion-button fill="clear" [routerLink]="['/estatuto']">Estatuto</ion-button>
-    <ion-button fill="clear" [routerLink]="['/vantagens']">Vantagens</ion-button>
-    <ion-button fill="clear" [routerLink]="['/parceiros']">Parceiros</ion-button>
-    <ion-button fill="clear" [routerLink]="['/faleconosco']">Fale Conosco</ion-button>
+    <ion-button fill="clear" style="color: #000000; font-weight: bold; font-size: 15px;" [routerLink]="['/legislacao']">Legislação</ion-button>
+    <ion-button fill="clear" style="color: #000000;font-weight: bold; font-size: 15px; " [routerLink]="['/estatuto']">Estatuto</ion-button>
+    <ion-button fill="clear" style="color: #000000; font-weight: bold; font-size: 15px; " [routerLink]="['/vantagens']">Vantagens</ion-button>
+    <ion-button fill="clear" style="color: #000000;font-weight: bold; font-size: 15px; " [routerLink]="['/parceiros']">Parceiros</ion-button>
+    <ion-button fill="clear" style="color: #000000;font-weight: bold; font-size: 15px;" [routerLink]="['/faleconosco']">Fale Conosco</ion-button>
   
   </ion-header>
   
@@ -50,70 +57,77 @@
     </div>
 
 <ion-slides pager="true" [options]="slideOpts">
-  
+
+  <div class="intro-text">
   <ion-slide>
-    <img src="https://images.wallpaperscraft.com/image/single/people_silhouettes_sunset_lake_mountains_116988_2560x1440.jpg">
+    <img src="../../../assets/images-coopeere/coopeereslide2.png">
   
-    <h1>O que nossos jovens esperam do futuro?</h1>
+    <h1 class="text-slider-c">Coopere você também, torne-se um cooperado</h1>
     <button [routerLink]="['/signup']">Cadastre-Se</button>  
   </ion-slide>
+</div>
 
   <ion-slide>
-    <img src="https://ariehalpern.com.br/wp-content/uploads/2021/07/blog12dejulhode2021.jpg">
+    <img src="../../../assets/images-coopeere/coopeereslide1.png">
 
     <h1>O que a sociedade espera dos nossos goverantes?</h1>
     <button [routerLink]="['/signup']">Cadastre-Se</button>
   </ion-slide>
 
   <ion-slide>
-    <img src="https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg?cs=srgb&dl=pexels-kellie-churchman-1001682.jpg&fm=jpg">
-   
+    <img src="../../../assets/images-coopeere/coopeereslide2.png">
+  
     <h1>O que nossos jovens esperam do futuro?</h1>
     <button [routerLink]="['/signup']">Cadastre-Se</button>  
   </ion-slide>
 
+ 
+
 
   <ion-slide>
-    <img src="https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg?cs=srgb&dl=pexels-kellie-churchman-1001682.jpg&fm=jpg">
+    <img style="width: 200%;" src="../../../assets/images-coopeere/coopeere-offshore.jpg">
    
-    <h1>ÚLTIMO SLIDE</h1>
+    <h1>Quantos milhares de empregos poderão ser criados?</h1>
     <button [routerLink]="['/signup']">Cadastre-Se</button>  
   </ion-slide>
+
+
+ 
 
 
   </ion-slides>
 
 
-  <h1 style="text-align: center; padding: 20px;">Apoio:</h1> 
+  <h1 style="text-align:start; padding: 10px;">Apoio:</h1> 
   <ion-slides style="margin: 15px;"  [options]="slideOpts2" >
 
     <ion-slide>
-      <ion-img src="../../../assets/img/cooopeerre.png"></ion-img>      
+      <img style="min-width: 50%" src="../../../assets/img/cooopeerre.png">      
     </ion-slide>
   
     <ion-slide>
-      <img src="../../../assets/img/fitmmrj.png">
+      <img style="min-width: 50%" src="../../../assets/img/fitmmrj.png">
     </ion-slide>
   
     <ion-slide>
-      <img src="../../../assets/img/wipdev.jpg">
+      <img style="min-width: 50%" src="../../../assets/img/wipdev.jpg">
     </ion-slide>
   
   
     <ion-slide>
-      <img src="../../../assets/img/primesol.jpg">
+      <img style="min-width: 50%" src="../../../assets/img/primesol.jpg">
     </ion-slide>
   
     <ion-slide>
-      <img src="../../../assets/img/redeaurora.jpeg">
+      <img style="min-width: 50%" src="../../../assets/img/redeaurora.jpeg">
     </ion-slide>
   
     <ion-slide>
-      <img src="../../../assets/img/fotonsolucoes.png">
+      <img style="min-width: 50%" src="../../../assets/img/fotonsolucoes.png">
     </ion-slide>
   
     <ion-slide>
-      <img src="../../../assets/img/forcasindical.png">
+      <img style="min-width: 50%" src="../../../assets/img/forcasindical.png">
     </ion-slide>
   
   

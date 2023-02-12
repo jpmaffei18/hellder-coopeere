@@ -1,13 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { LocalStorage } from '@ngx-pwa/local-storage';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-onboarding',
-  templateUrl: './onboarding.page.html',
+  templateUrl: './onboarding.page.html', 
+  
   styleUrls: ['./onboarding.page.scss'],
 })
 export class OnboardingPage implements OnInit  {
+
+  showMenu = false;
+
+  toggleMenu() {
+    this.showMenu = !this.showMenu;
+  }
+
  
   slideOpts = {
     autoplay: {
@@ -29,7 +37,15 @@ export class OnboardingPage implements OnInit  {
 
   selectedOption: string = '';
  
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private localStorage: LocalStorage
+    ) {}
+
+
+    async clearCache(){
+      await this.localStorage.clear().toPromise()
+    }
 
   goToPage(option: string) {
     switch (option) {
