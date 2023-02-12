@@ -1,0 +1,55 @@
+<ion-header>
+
+ 
+</ion-header>
+
+
+<ion-header>
+  <ion-toolbar>
+    <ion-segment [(ngModel)]="selectedTab">
+      <ion-segment-button value="option1">
+        Informações Pessoais
+      </ion-segment-button>
+      <ion-segment-button value="option2">
+        Informações Preenchimento
+      </ion-segment-button>
+      <ion-segment-button value="option3">
+        PRODIST
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div [ngSwitch]="selectedTab">
+    <div *ngSwitchCase="'option1'">
+      Content for option 1
+    </div>
+    <div *ngSwitchCase="'option2'">
+      Content for option 2
+    </div>
+    <div *ngSwitchCase="'option3'">
+      Content for option 3
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="previousPage()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="nextPage()">
+        <ion-icon name="arrow-forward"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>
+
+
+<ion-content>
+
+</ion-content>

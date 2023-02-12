@@ -226,6 +226,10 @@ const routes: Routes = [
   {
     path: 'wallace-randolph',
     loadChildren: () => import('./pages/integrantes/wallace-randolph/wallace-randolph.module').then( m => m.WallaceRandolphPageModule)
+  },
+  {
+    path: 'home',
+    loadChildren: () => import('./pages/inside/home/home.module').then( m => m.HomePageModule)
   }
 
 ];
