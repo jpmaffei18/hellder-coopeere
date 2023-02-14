@@ -1,6 +1,23 @@
+
+<ion-header>
+  <ion-card>
+  <ion-img  
+    [routerLink]="['/onboarding']" 
+    style="max-width: 10%; padding: 20px; margin-left: 60px;" 
+    src="../../../assets/images-coopeere/coopere.png"
+    >
+  </ion-img>
+</ion-card>
+  
+</ion-header>
 <ion-header>
 
- 
+  <ion-list *ngIf="data">
+    <ion-item *ngFor="let item of data">
+      {{ item.title }}
+    </ion-item>
+  </ion-list>
+  
 </ion-header>
 
 
@@ -14,7 +31,22 @@
         Informações Preenchimento
       </ion-segment-button>
       <ion-segment-button value="option3">
+        Triagem
+      </ion-segment-button>
+      <ion-segment-button value="option4">
         PRODIST
+      </ion-segment-button>
+      <ion-segment-button value="option5">
+        Mensalidade
+      </ion-segment-button>
+      <ion-segment-button value="option6">
+      Regulamento
+      </ion-segment-button>
+      <ion-segment-button value="option7">
+        Sorteio
+      </ion-segment-button>
+      <ion-segment-button value="option8">
+        Convite
       </ion-segment-button>
     </ion-segment>
   </ion-toolbar>
@@ -23,7 +55,12 @@
 <ion-content>
   <div [ngSwitch]="selectedTab">
     <div *ngSwitchCase="'option1'">
-      Content for option 1
+<ion-card class="card1">
+  Seja bem-vindo 
+</ion-card>
+
+
+
     </div>
     <div *ngSwitchCase="'option2'">
       Content for option 2
@@ -31,6 +68,164 @@
     <div *ngSwitchCase="'option3'">
       Content for option 3
     </div>
+    <div *ngSwitchCase="'option4'">
+      Content for option 4
+    </div>
+    <div *ngSwitchCase="'option5'">
+      
+      <div class="row-of-payment-options">
+
+        <ion-card class="class-of-row-of-payment-options">
+          <ion-label class="payment-options-h"> Mensal</ion-label>
+        <br> <br>
+
+
+          <ion-label class="price">R$ 3,50</ion-label>
+
+          <ion-radio-group value="payment-options">
+            <ion-item>
+              <ion-label class="u-payment-options">Pix</ion-label>
+              <ion-radio  slot="end" value="pix" [disabled]="false"></ion-radio>
+            </ion-item>
+        
+        <ion-label></ion-label>
+
+            <ion-item>
+              <ion-label class="u-payment-options">Boleto Bancário</ion-label>
+              <ion-radio slot="end" value="boleto" [disabled]="false"></ion-radio>
+            </ion-item>
+          </ion-radio-group>
+
+
+   
+        
+        </ion-card>
+
+        <ion-card class="class-of-row-of-payment-options">
+          <ion-label class="payment-options-h">Bimestral</ion-label>
+          
+        
+          <br> <br>
+
+
+          <ion-label class="price">R$ 3,50</ion-label>
+
+          <ion-radio-group value="payment-options">
+            <ion-item>
+              <ion-label class="u-payment-options">Pix</ion-label>
+              <ion-radio  slot="end" value="pix" [disabled]="false"></ion-radio>
+            </ion-item>
+        
+        <ion-label></ion-label>
+
+            <ion-item>
+              <ion-label class="u-payment-options">Boleto Bancário</ion-label>
+              <ion-radio slot="end" value="boleto" [disabled]="false"></ion-radio>
+            </ion-item>
+          </ion-radio-group>
+
+
+
+        </ion-card>
+
+
+        <ion-card class="class-of-row-of-payment-options">
+          <ion-label class="payment-options-h">Trimestral</ion-label>
+          
+          <br> <br>
+
+
+          <ion-label class="price">R$ 3,50</ion-label>
+
+          <ion-radio-group value="payment-options">
+            <ion-item>
+              <ion-label class="u-payment-options">Pix</ion-label>
+              <ion-radio  slot="end" value="pix" [disabled]="false"></ion-radio>
+            </ion-item>
+        
+        <ion-label></ion-label>
+
+            <ion-item>
+              <ion-label class="u-payment-options">Boleto Bancário</ion-label>
+              <ion-radio slot="end" value="boleto" [disabled]="false"></ion-radio>
+            </ion-item>
+          </ion-radio-group>
+
+
+        
+        
+        </ion-card>
+
+
+
+        <ion-card class="class-of-row-of-payment-options">
+
+          <ion-label class="payment-options-h">Semestral</ion-label>
+        
+          <br> <br>
+
+
+          <ion-label class="price">R$ 3,50</ion-label>
+
+          <ion-radio-group value="payment-options">
+            <ion-item>
+              <ion-label class="u-payment-options">Pix</ion-label>
+              <ion-radio  slot="end" value="pix" [disabled]="false"></ion-radio>
+            </ion-item>
+        
+        <ion-label></ion-label>
+
+            <ion-item>
+              <ion-label class="u-payment-options">Boleto Bancário</ion-label>
+              <ion-radio slot="end" value="boleto" [disabled]="false"></ion-radio>
+            </ion-item>
+          </ion-radio-group>
+
+
+        
+        
+        </ion-card>
+
+
+        <ion-card class="class-of-row-of-payment-options">
+          
+          <ion-label class="payment-options-h">Anual</ion-label>
+
+          <br> <br>
+
+
+          <ion-label class="price">R$ 3,50</ion-label>
+
+          <ion-radio-group value="payment-options">
+            <ion-item>
+              <ion-label class="u-payment-options">Pix</ion-label>
+              <ion-radio  slot="end" value="pix" [disabled]="false"></ion-radio>
+            </ion-item>
+        
+        <ion-label></ion-label>
+
+            <ion-item>
+              <ion-label class="u-payment-options">Boleto Bancário</ion-label>
+              <ion-radio slot="end" value="boleto" [disabled]="false"></ion-radio>
+            </ion-item>
+          </ion-radio-group>
+
+
+        </ion-card>
+
+      </div>
+
+    </div>
+    <div *ngSwitchCase="'option6'">
+      Content for option 6
+    </div>
+    <div *ngSwitchCase="'option7'">
+      Content for option 7
+    </div>
+    <div *ngSwitchCase="'option8'">
+      Content for option 8
+    </div>
+   
   </div>
 </ion-content>
 
@@ -38,11 +233,14 @@
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-button (click)="previousPage()">
+      
         <ion-icon name="arrow-back"></ion-icon>
+        <ion-label>Anterior</ion-label>
       </ion-button>
     </ion-buttons>
     <ion-buttons slot="end">
       <ion-button (click)="nextPage()">
+        <ion-label>Próxima</ion-label>
         <ion-icon name="arrow-forward"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -50,6 +248,3 @@
 </ion-footer>
 
 
-<ion-content>
-
-</ion-content>

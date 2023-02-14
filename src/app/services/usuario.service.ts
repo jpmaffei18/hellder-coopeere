@@ -3,7 +3,7 @@ import { HttpClient} from '@angular/common/http'
 import { Observable } from 'rxjs';
 
 
-const usuarioURL = 'http://localhost:3000/person/';
+const usuarioURL = 'http://localhost:3000/users/';
 
 @Injectable({
   providedIn: 'root'
@@ -13,11 +13,11 @@ export class UsuarioService {
   constructor(private httpClient: HttpClient) { }
 
   create(data: any): Observable<any>{
-    return this.httpClient.post(usuarioURL,data)
+    return this.httpClient.post(usuarioURL+'cadastrar',data)
   }
 
   findAll() {
-    return this.httpClient.get(usuarioURL);
+    return this.httpClient.get(usuarioURL+'all');
   }
 
   findOne(data: any): Observable<any>{
@@ -25,11 +25,11 @@ export class UsuarioService {
   }
 
   update(data: any){
-    return this.httpClient.patch(usuarioURL+'atualizar', data);
+    return this.httpClient.patch(usuarioURL, data);
   }
   
   delete(data: any){
-    return this.httpClient.get(usuarioURL+'apagar');
+    return this.httpClient.get(usuarioURL, data);
   }
 
 // autenticação
@@ -39,5 +39,16 @@ export class UsuarioService {
   }
 
   //LOGOUT?
+
+
+
+  //
+
+  getData(data: any) {
+    return this.httpClient.get(usuarioURL, data);
+  }
+
+
+
 
 }
