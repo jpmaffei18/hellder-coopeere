@@ -55,10 +55,81 @@
 <ion-content>
   <div [ngSwitch]="selectedTab">
     <div *ngSwitchCase="'option1'">
+
 <ion-card class="card1">
   Seja bem-vindo 
 </ion-card>
 
+<ion-card class="blue-associate">
+
+  <div class="card-infos-group">
+
+  <div class="blue-associate-icon">
+    <ion-icon name="bulb"></ion-icon>
+  </div>
+
+  <br><br>
+
+  <div class="card-infos">
+    <ion-label>Associado</ion-label>
+      <!-- LEMBRAR QUE AQUI NA VERDADE PRECISA ESTAR O NOME DA PESSOA LOGADA -->
+    <ion-label class="associate-text">Hellder Benjamin</ion-label>
+      <!-- LEMBRAR QUE AQUI NA VERDADE PRECISA ESTAR O CPF DA PESSOA LOGADA -->
+    <ion-label class="associate-text">007.344.457-09</ion-label>
+  </div>
+
+</div>
+
+</ion-card>
+
+<ion-card class="green-associate">
+
+  
+  <div class="card-infos-group">
+
+    <div class="green-associate-icon">
+      <ion-icon name="call"></ion-icon>
+    </div>
+  
+    <br><br>
+  
+    <div class="card-infos">
+      <ion-label>Contatos</ion-label>
+        <!-- LEMBRAR QUE AQUI NA VERDADE PRECISA ESTAR O NOME DA PESSOA LOGADA -->
+      <ion-label class="associate-text">(22) 99984 - 2434</ion-label>
+        
+      
+    </div>
+  
+  </div>
+
+</ion-card>
+
+<ion-card class="red-associate">
+  
+
+
+  <div class="card-infos-group">
+
+    <div class="red-associate-icon">
+      <ion-icon name="location"></ion-icon>
+    </div>
+  
+    <br><br>
+  
+    <div class="card-infos">
+      <ion-label>Endereço</ion-label>
+        <!-- LEMBRAR QUE AQUI NA VERDADE PRECISA ESTAR A RUA E O NÚMERO DA PESSOA LOGADA -->
+      <ion-label class="associate-text">Rua Professora Agricolina de Freitas</ion-label>
+        <!-- LEMBRAR QUE AQUI NA VERDADE PRECISA ESTAR A CIDADE E A SIGLA DO ESTADO DA PESSOA LOGADA -->
+      <ion-label class="associate-text">Campos dos Goytacazes - RJ</ion-label>
+       <!-- LEMBRAR QUE AQUI NA VERDADE PRECISA ESTAR O BAIRRO E O CEP DA PESSOA LOGADA -->
+       <ion-label class="associate-text">Centro - 28013015</ion-label>
+    </div>
+  
+  </div>
+
+</ion-card>
 
 
     </div>
@@ -75,6 +146,7 @@
       
       <div class="row-of-payment-options">
 
+        <div>
         <ion-card class="class-of-row-of-payment-options">
           <ion-label class="payment-options-h"> Mensal</ion-label>
         <br> <br>
@@ -100,7 +172,9 @@
    
         
         </ion-card>
+      </div>
 
+      <div>
         <ion-card class="class-of-row-of-payment-options">
           <ion-label class="payment-options-h">Bimestral</ion-label>
           
@@ -108,7 +182,7 @@
           <br> <br>
 
 
-          <ion-label class="price">R$ 3,50</ion-label>
+          <ion-label class="price">R$ 7,00</ion-label>
 
           <ion-radio-group value="payment-options">
             <ion-item>
@@ -127,15 +201,16 @@
 
 
         </ion-card>
+      </div>
 
-
+      <div>
         <ion-card class="class-of-row-of-payment-options">
           <ion-label class="payment-options-h">Trimestral</ion-label>
           
           <br> <br>
 
 
-          <ion-label class="price">R$ 3,50</ion-label>
+          <ion-label class="price">R$ 10,00</ion-label>
 
           <ion-radio-group value="payment-options">
             <ion-item>
@@ -155,9 +230,9 @@
         
         
         </ion-card>
+      </div>
 
-
-
+      <div>
         <ion-card class="class-of-row-of-payment-options">
 
           <ion-label class="payment-options-h">Semestral</ion-label>
@@ -165,7 +240,7 @@
           <br> <br>
 
 
-          <ion-label class="price">R$ 3,50</ion-label>
+          <ion-label class="price">R$ 18,00</ion-label>
 
           <ion-radio-group value="payment-options">
             <ion-item>
@@ -185,8 +260,9 @@
         
         
         </ion-card>
+      </div>
 
-
+      <div>
         <ion-card class="class-of-row-of-payment-options">
           
           <ion-label class="payment-options-h">Anual</ion-label>
@@ -194,7 +270,7 @@
           <br> <br>
 
 
-          <ion-label class="price">R$ 3,50</ion-label>
+          <ion-label class="price">R$ 32,00</ion-label>
 
           <ion-radio-group value="payment-options">
             <ion-item>
@@ -212,7 +288,7 @@
 
 
         </ion-card>
-
+      </div>
       </div>
 
     </div>
@@ -231,19 +307,29 @@
 
 <ion-footer>
   <ion-toolbar>
-    <ion-buttons slot="start">
+    
+    <ion-buttons slot="end">
       <ion-button (click)="previousPage()">
-      
         <ion-icon name="arrow-back"></ion-icon>
         <ion-label>Anterior</ion-label>
       </ion-button>
     </ion-buttons>
+
     <ion-buttons slot="end">
       <ion-button (click)="nextPage()">
         <ion-label>Próxima</ion-label>
         <ion-icon name="arrow-forward"></ion-icon>
       </ion-button>
     </ion-buttons>
+  
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-label>Salvar</ion-label>
+        <ion-icon name="save"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+  
   </ion-toolbar>
 </ion-footer>
 
