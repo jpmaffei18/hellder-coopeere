@@ -4,6 +4,7 @@ import { Repository } from 'typeorm';
 import { User } from './entities/user.entity';
 import { Bcrypt } from 'src/auth/bcrypt/bcrypt';
 import { UpdateUserDto } from './dto/update-user.dto';
+import { CreateUserDto } from './dto/create-user.dto';
 
 @Injectable()
 export class UsersService {
@@ -15,7 +16,17 @@ export class UsersService {
     private bcrypt: Bcrypt
   ) {}
 
-  //CRIAÇÃO DE NOVOS USUÁRIOS
+
+  async create(data: CreateUserDto) {
+    // return this.createPostDto.create();
+ 
+     const post = this.usersRepository.create(data);
+     await this.usersRepository.save(data);
+     return post;
+ 
+   }
+
+  /*CRIAÇÃO DE NOVOS USUÁRIOS
   async create(username: User): Promise<User> {
 
     let searchUser = await this.findByUsername(username.username);
@@ -29,7 +40,7 @@ export class UsersService {
     throw new HttpException("O Usuario ja existe!", HttpStatus.BAD_REQUEST);
    
   }
-
+*/
 
   //EXIBIÇÃO DE TODOS OS USUÁRIOS NA TELA
   async findAll(): Promise<User[]> {
