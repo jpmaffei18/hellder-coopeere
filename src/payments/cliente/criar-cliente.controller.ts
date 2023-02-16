@@ -1,22 +1,17 @@
+import { Body, Controller, HttpCode, Post } from "@nestjs/common";
+import { CriarClienteService } from "./criar-cliente.service";
+import { CriarCliente } from "./criar-cliente.entity";
 
-    export interface Properties {
-        name: string;
-        cpfCnpj: string;
-        email: Email;
-        phone: Phone;
-        mobilePhone: MobilePhone;
-        address: Address;
-        addressNumber: AddressNumber;
-        complement: Complement;
-        province: Province;
-        postalCode: PostalCode;
-        externalReference: ExternalReference;
-        notificationDisabled: NotificationDisabled;
-        additionalEmails: AdditionalEmails;
-        municipalInscription: MunicipalInscription;
-        stateInscription: StateInscription;
-        observations: Observations;
-        groupName: GroupName;
+    @Controller('criarcliente')
+    export class CriarClienteController {
+        constructor(private readonly criarClienteService: CriarClienteService) {}
+
+  @HttpCode(HttpStatus.CREATED)
+  @Post('cadastrar')
+  async create(@Body() username: CriarCliente): Promise<CriarCliente> {
+    return this.criarClienteService.create(username);
+  }
+
     }
 
   
