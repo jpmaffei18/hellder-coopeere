@@ -1,12 +1,6 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+export class CriarClienteDto {
 
-@Entity()
-export class CriarCliente {
-  @PrimaryGeneratedColumn()
-    id: number
-    
-//@Column()
-name: string;
+    name: string;
 cpfCnpj: string;
 email: string;
 phone: number;

@@ -1,58 +1,34 @@
 import { Injectable } from '@nestjs/common';
 import axios from 'axios';
-import { asaasConfig } from './asaas.config';
 
 @Injectable()
 export class AsaasService {
-  private readonly apiUrl = asaasConfig.apiUrl;
-  private readonly apiToken = asaasConfig.apiToken;
+  private readonly baseUrl = 'https://www.asaas.com/api/v3';
 
-  public async createPayment(data: any) {
-    const url = `${this.apiUrl}/payments`;
-    const headers = {
-      'Content-Type': 'application/json',
-      'access_token': this.apiToken,
-    };
-    const response = await axios.post(url, data, { headers });
+  async createCustomer(name: string, email: string): Promise<any> {
+    const response = await axios.post(`${this.baseUrl}/customers`, {
+      name,
+      email,
+    }, {
+      headers: {
+        'access_token': 'seu_token_de_acesso_ao_asaas',
+      },
+    });
     return response.data;
   }
 
-
-  async createCustomer(data: any){
-    const customer = `${this.apiUrl}/api/v3/customers`;
-    
+  async createInvoice(email: string, description: string, value: number): Promise<any> {
+    const response = await axios.post(`${this.baseUrl}/payments`, {
+      customer: email,
+      billingType: 'BOLETO',
+      dueDate: '2022-02-28',
+      value,
+      description,
+    }, {
+      headers: {
+        'access_token': 'seu_token_de_acesso_ao_asaas',
+      },
+    });
+    return response.data;
   }
 }
-
-
-/*
-
-Demetrius Ferreira <engdemeferreira@gmail.com>
-	
-4:29 PM (2 minutes ago)
-	
-to me
-$aact_YTU5YTE0M2M2N2I4MTliNzk0YTI5N2U5MzdjNWZmNDQ6OjAwMDAwMDAwMDAwMDAyNzE5NjM6OiRhYWNoXzQ0ZmM1YTJhLWQyZGQtNDA3Zi1hZGQxLTM5YzAyMzhhZjI0OQ==
-*/
-
-
-
-/*
-
-
-constructor(private httpService: HttpService){}
-
-    async charge(value: number, customer: string){
-        const charge = await this.assas.charges.create({
-            value,
-            customer,
-            description: "Exemplo de cobrança",
-        });
-        return charge    
-    }
-
-
-*/
-
-    //private assas: any
-    /*  this.assas = new this.assas(asaasConfig);*/

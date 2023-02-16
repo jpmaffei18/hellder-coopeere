@@ -1,6 +1,7 @@
 import { Body, Controller, HttpCode, Post } from "@nestjs/common";
 import { CriarClienteService } from "./criar-cliente.service";
-import { CriarCliente } from "./criar-cliente.entity";
+import { CriarCliente } from "./criar-cliente.entity"
+import { HttpStatus } from "@nestjs/common/enums";
 
     @Controller('criarcliente')
     export class CriarClienteController {
@@ -8,8 +9,8 @@ import { CriarCliente } from "./criar-cliente.entity";
 
   @HttpCode(HttpStatus.CREATED)
   @Post('cadastrar')
-  async create(@Body() username: CriarCliente): Promise<CriarCliente> {
-    return this.criarClienteService.create(username);
+  async create(@Body() id: CriarCliente): Promise<CriarCliente> {
+    return this.criarClienteService.create(id);
   }
 
     }
