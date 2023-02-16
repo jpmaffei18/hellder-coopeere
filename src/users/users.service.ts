@@ -3,6 +3,7 @@ import { Injectable, Inject, HttpException, HttpStatus } from '@nestjs/common';
 import { Repository } from 'typeorm';
 import { User } from './entities/user.entity';
 import { Bcrypt } from 'src/auth/bcrypt/bcrypt';
+import { UpdateUserDto } from './dto/update-user.dto';
 
 @Injectable()
 export class UsersService {
@@ -60,6 +61,8 @@ export class UsersService {
 
 
   //ATUALIZAÇÃO DE USUÁRIO
+
+/*
   async update(username: User, id: User): Promise<User> {
 
     let updateUser: User = await this.findById(username.id)
@@ -74,9 +77,19 @@ export class UsersService {
     username.password = await this.bcrypt.cryptographPasswords(username.password)
     return await this.usersRepository.save(username);
   }
+*/
+
+async update(id: number, data: Partial<UpdateUserDto>) {
+  await this.usersRepository.update({id}, data)
+  return await this.usersRepository.findOne;
+}
+
 
   //EXCLUSÃO DE UM USUÁRIO
-  remove(id: number) {
-    return this.usersRepository.delete(id);
-  }
+  async destroy(id: number) {
+
+
+    await this.usersRepository.delete({ id })  ;
+    return { deleted: true}
+      }
 }

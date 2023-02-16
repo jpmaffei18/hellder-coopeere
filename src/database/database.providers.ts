@@ -54,7 +54,7 @@ export const databaseProviders = [
         ],
 
         //NA LINHA ABAIXO A SINCRONIZAÇÃO SIMULTÂNEA COM O BANCO DE DADOS OCORRE
-        synchronize: false,
+        synchronize: true,
         
       });
 

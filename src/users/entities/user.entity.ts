@@ -7,69 +7,123 @@ import { ApiProperty } from "@nestjs/swagger"
 @Entity()
 
 export class User {
-    @IsNotEmpty()
+     
+    
     @ApiProperty()
     @PrimaryGeneratedColumn()
     public id: number;
 
-    @IsNotEmpty()
+    @Column({length: 100})
+    @ApiProperty()
+    public externalReference: string;
+    
+
+    
+     
     @ApiProperty()
     @Column({length: 100})
     public name: string;
     
-    @IsNotEmpty()
+    
     @Column({length: 100})
     @ApiProperty()
-    public secondname: string;
+    public cpfCnpj: string;
 
-    @IsNotEmpty()
+     
     @Column()
     @ApiProperty()
     public b_day: string;
 
-    @IsNotEmpty()
+     
     @Column({length: 100})
     @ApiProperty()
     public genre: string;
 
-    @IsNotEmpty()
+     
     @Column()
     @ApiProperty()
-    public phonenumber: number;
+    public phone: number;
 
-    @IsNotEmpty()
     @Column()
     @ApiProperty()
-    public cep: number;
+    public mobilePhone: number;
 
-    @IsNotEmpty()
+     
+    @Column()
+    @ApiProperty()
+    public postalCode: number;
+
+     
     @Column({length: 100})
     @ApiProperty()
     public address: string;
 
-    @IsNotEmpty()
+    
+    @Column()
+    @ApiProperty()
+    public addressNumber: number;
+
+
     @Column({length: 100})
     @ApiProperty()
-    public city: string;
-    
-    @IsNotEmpty()
+    public complement: string;
+
+
+    @Column({length: 100})
+    @ApiProperty()
+    public province: string;
+
+        
     @Column({length: 100})
     @ApiProperty()
     public state: string;
 
-        @IsEmail()
+    
+
+    @Column({length: 100})
+    @ApiProperty()
+    public municipalInscription: string;
+
+    @Column({length: 100})
+    @ApiProperty()
+    public stateInscription: string;
+
+    @Column({length: 100})
+    @ApiProperty()
+    public observations: string;
+
+    @Column({length: 100})
+    @ApiProperty()
+    public groupName: string;
+
+
+
+
+
+
+
+
+
+    
+
+    
+    @Column()
+    @ApiProperty()
+    public notificationDisabled: boolean;
+
+         
         @Column({length: 100})
         @ApiProperty()
         public email: string;
 
-        @IsNotEmpty()
+         
         @Column({length: 100})
         @ApiProperty()
         public username: string;
 
         
-        @IsNotEmpty()
-        @MinLength(8)
+         
+         
         @Column({length: 100})
         @ApiProperty()
         public password: string;

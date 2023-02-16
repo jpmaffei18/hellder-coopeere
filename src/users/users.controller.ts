@@ -13,7 +13,7 @@ export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
   @HttpCode(HttpStatus.CREATED)
-  @Post('/cadastrar')
+  @Post('cadastrar')
   async create(@Body() username: User): Promise<User> {
     return this.usersService.create(username);
   }
@@ -31,15 +31,25 @@ export class UsersController {
     return this.usersService.findById(id);
   }
 
+ 
+
   @UseGuards(JwtAuthGuard)
   @Patch('/atualizar')
   @HttpCode(HttpStatus.OK)
-  async update(@Body() username:User, id: User): Promise<User> {
-    return this.usersService.update(username, id);
+  async updateUser(@Param('id') id: number, @Body() data: Partial<CreateUserDto>) {
+    await this.usersService.update(id, data);
+    return {
+      statusCode: HttpStatus.OK,
+      message: 'post atualizado com sucesso',
+    };
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.usersService.remove(+id);
+  async deleteUser(@Param('id') id: number) {
+    await this.usersService.destroy(id);
+    return {
+      statusCode: HttpStatus.OK,
+      message: 'post appagado com sucessi',
+    };
   }
 }
