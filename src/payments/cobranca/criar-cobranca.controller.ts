@@ -7,11 +7,12 @@ export class InvoiceController {
 
   @Post()
   async createInvoice(
-    @Body('email') email: string,
+    @Body('customerId') customerId: string,
+   // @Body('email') email: string,
     @Body('description') description: string,
     @Body('value') value: number,
   ): Promise<any> {
-    const invoice = await this.asaasService.createInvoice(email, description, value);
+    const invoice = await this.asaasService.createInvoice(customerId, description, value);
     // Aqui você poderia utilizar o TypeORM para salvar a fatura criada no banco de dados
     // ou então retornar a resposta da API do Asaas para o cliente
     return invoice;

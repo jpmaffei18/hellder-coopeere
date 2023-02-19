@@ -1,6 +1,6 @@
 export class CriarClienteDto {
-
-    name: string;
+customerId: string;
+name: string;
 cpfCnpj: string;
 email: string;
 phone: number;

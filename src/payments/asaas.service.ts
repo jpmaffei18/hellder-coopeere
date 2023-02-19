@@ -5,7 +5,7 @@ import axios from 'axios';
 export class AsaasService {
   private readonly baseUrl = 'https://www.asaas.com/api/v3';
 
-  async createCustomer(name: string, email: string): Promise<any> {
+  async criarCliente(name: string, email: string): Promise<any> {
     const response = await axios.post(`${this.baseUrl}/customers`, {
       name,
       email,
@@ -31,4 +31,10 @@ export class AsaasService {
     });
     return response.data;
   }
+
+
+  async createPayment(customerId: string): Promise<any>{
+    const response = await axios.post(`${this.baseUrl}/payments`)
+  }
+
 }

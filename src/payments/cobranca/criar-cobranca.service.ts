@@ -12,13 +12,24 @@ export class InvoiceService {
     private readonly asaasService: AsaasService,
   ) {}
 
-  async createInvoice(customerId: number, description: string, value: number) {
-    const customer = await this.customerRepository.findOne(customerId); // esse customer supostamente deveria estar guardado no banco de dados
+  async createInvoice(customerId: string, email: string, description: string, value: number) {
+    const customer = await this.customerRepository.findOne({
+      
+      where: {
+        customerId
+      
+      },
+    
+    
+    }); // esse customer supostamente deveria estar guardado no banco de dados
     const invoice = await this.asaasService.createInvoice(
-      customer.email,
+      customer.customerId,
+     // customer.email,
       description,
       value,
     );
     // ...
+
+    
   }
 }
