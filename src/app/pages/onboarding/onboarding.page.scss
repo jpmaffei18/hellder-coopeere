@@ -67,7 +67,7 @@ ion-slide button {
     margin-top: 200px;
     padding: 15px;
     border-radius: 50px;
-    background-color: green;
+    background-color: #2B571A;
 }
 
 @media (max-width: 767px) {
@@ -90,10 +90,10 @@ ion-slide button {
     justify-content: flex-end;
     display: flex;
     flex-direction: row;
-    padding-right: 30px;
+    padding-right: 0px;
     padding-top: 5px;
     padding-bottom: 5px;
-    background-color: green;
+    background-color: #2B571A;
 }
 
 .label-header {
@@ -105,7 +105,7 @@ ion-slide button {
     padding: 18px;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
 }
 
@@ -192,7 +192,7 @@ ion-input {
     padding-right: 30px;
     padding-top: 5px;
     padding-bottom: 5px;
-    background-color: green;
+    background-color: #2B571A;
 }
 
 .select-text {

@@ -16,7 +16,7 @@
   <ion-header class="header">
     
     
-      <ion-img style="max-width: 10%;" src="../../../assets/images/coopere.png"></ion-img>
+      <ion-img style="max-width: 10%;" src="../../../assets/images-coopeere/coopere.png"></ion-img>
     
   
     
@@ -42,14 +42,19 @@
 
 <ion-content>
 
-  
-</ion-content>
+    <div class="text-container" style="margin-top: 70px;  display: inline-block; width: 50%;">
+
+    <h1>Fale conosco</h1>
+    <h2><strong>fale.conosco@coopeere.eco.br</strong></h2>
+
+  </div>
+
+</ion-content>  
+
 
 
   <ion-footer class="footer"> 
     
-    <ion-label style="padding-left: 15px;" >Made With <ion-icon name="heart"></ion-icon> by Makrom / TripleAVB</ion-label>
-  
     <div class="menu-footer">
       <ion-label [routerLink]="['/eventos']">Eventos</ion-label>
       <ion-label [routerLink]="['/publicacoes']">Publicações</ion-label>
@@ -57,21 +62,5 @@
       <ion-label [routerLink]="['/galeria']" >Galeria de Fotos</ion-label>
       <ion-label [routerLink]="['/faleconosco']">Fale Conosco</ion-label>
     </div>
-  
-    <div class="social-media-icons">
-
-<!-- ROUTER LINKS NÃO FUNCIONAM COM LINKS DE VERDADE  -->
-
-<!-- MAS DEU PRA RESOLVER USANDO UMA FUNÇÃO COM TYPESCRIPT -->
-      
-      <ion-label (click)="openExternalLinkFacebook()"> <strong>Facebook</strong> </ion-label>
-      <ion-label (click)="openExternalLinkInstagram()"> <strong>Instagram</strong> </ion-label>
-      <ion-label (click)="openExternalLinkYouTube()"> <strong>Youtube</strong> </ion-label>
-    </div>
-    
     
   </ion-footer>
-
-<ion-content>
-
-</ion-content>

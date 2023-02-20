@@ -24,6 +24,7 @@
 }
 
 
+
 ion-slide {
    position: relative;
 }
@@ -53,6 +54,13 @@ ion-slide button {
     background-color: green;
 }
 
+ion-content {
+    --ion-background-color: white;
+    
+    display: flex;
+    flex: 200px;
+}
+
 
 .container {
     background-image: url("https://media.gazetadopovo.com.br/2019/06/08112107/energia-eolica-660x372.jpg");
@@ -76,11 +84,30 @@ ion-slide button {
 
 .header {
     padding: 18px;
+    padding-right: 400px;
+    padding-left: 380px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    background-color: white;
+    border: none;
 }
+
+.header ion-button{
+    color:black;
+    margin-left: 20px;
+    font-size:13px;
+    margin-top:25px;
+    padding-bottom: 20px;
+  }
+
+  .header a{
+    color:black;
+    margin-left: 20px;
+    font-size:13px;
+    
+  }
 
 .lista-dropdown{
     border-radius: 20px;
@@ -91,6 +118,10 @@ ion-slide button {
     padding-top: 30px;
     font-size: 35px;
     font-weight: bold;
+    
+}
+ion-button:hover{
+    border-bottom: solid 5px green;
     
 }
 
@@ -200,6 +231,11 @@ ion-input {
     color: black;
   }
 
+  .dropdown a{
+    color:black;
+    text-decoration: none;
+  }
+
   .dropdown-item:hover {
     background-color: #f1f1f1;
   }
@@ -209,7 +245,10 @@ ion-input {
   }
 
   .text-container {
-    margin-left: 10%;
+    margin-left: 20%;
     max-width: 60%;
     max-height: 1000px;
-  }
+    color: black;
+    align-content: flex-start;
+    align-items: flex-start;
+}
