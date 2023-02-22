@@ -48,47 +48,37 @@
   
   
   <ion-content>
-  
-    <div class="container">
-  
-   
-    
-
-    </div>
-
 <ion-slides pager="true" [options]="slideOpts">
 
-  <div class="intro-text">
-  <ion-slide>
-    <img src="../../../assets/images-coopeere/coopeereslide2.png">
+  <ion-slide style="height: 900px;">
+    <img style="width: 100%; height: 900px; background-size: contain; display: block;" src="../../../assets/images-coopeere/coopeereslide2.png" >
   
-    <h1 class="text-slider-c">Coopere você também, torne-se um cooperado</h1>
-    <button [routerLink]="['/signup']">Cadastre-Se</button>  
-  </ion-slide>
-</div>
-
-  <ion-slide>
-    <img src="../../../assets/images-coopeere/coopeereslide1.png">
-
-    <h1>O que a sociedade espera dos nossos goverantes?</h1>
-    <button [routerLink]="['/signup']">Cadastre-Se</button>
+    <h1 class="text-slider-c">Coopere você também<br>torne-se um cooperado</h1>
+    <button style="transform: translate(-120%, -50%);" [routerLink]="['/signup']">CADASTRE-SE</button>  
   </ion-slide>
 
-  <ion-slide>
-    <img src="../../../assets/images-coopeere/coopeereslide2.png">
+  <ion-slide style="height: 900px;">
+    <img style="width: 3000px; background-size: contain" src="../../../assets/images-coopeere/coopeereslide1.png">
+
+    <h1 style="transform: translate(-57%, -35%);">O que a sociedade espera <br> dos nossos governantes?</h1>
+    <button [routerLink]="['/signup']">CADASTRE-SE</button>
+  </ion-slide>
+
+  <ion-slide style="height: 900px;">
+    <img style="width: 100%; background-size: contain" src="../../../assets/images-coopeere/coopeereslide2.png">
   
-    <h1>O que nossos jovens esperam do futuro?</h1>
-    <button [routerLink]="['/signup']">Cadastre-Se</button>  
+    <h1 style="transform: translate(-57%, -10%);">O que nossos jovens <br> esperam do futuro?</h1>
+    <button [routerLink]="['/signup']">CADASTRE-SE</button>  
   </ion-slide>
 
  
 
 
-  <ion-slide>
-    <img style="width: 200%;" src="../../../assets/images-coopeere/coopeere-offshore.jpg">
+  <ion-slide style="height: 900px;">
+    <img style="width: 100%; background-size: contain" src="../../../assets/images-coopeere/coopeere-offshore.jpg">
    
-    <h1>Quantos milhares de empregos poderão ser criados?</h1>
-    <button [routerLink]="['/signup']">Cadastre-Se</button>  
+    <h1 style="transform: translate(-57%, -75%);">Quantos milhares de <br> empregos poderão ser <br>criados?</h1>
+    <button style="transform: translate(-120%, -150%);" [routerLink]="['/signup']">CADASTRE-SE</button>  
   </ion-slide>
 
 
@@ -97,55 +87,60 @@
 
   </ion-slides>
 
+  <h1 style="height: 100px; width: 20%; background-color: beige; display:inline-block; color: black">Apoio:</h1>
 
-  <h1 style="text-align:start; padding: 10px;">Apoio:</h1> 
-  <ion-slides style="margin: 15px;"  [options]="slideOpts2" >
+  <ion-slides style=" height: 100px; background-color: beige; padding-top: 20px; padding-bottom: 20px; width: 60%; display:inline-block;"   [options]="slideOpts2" >
+  
+    <ion-slide>
+      <img style="width: 50%" src="../../../assets/img/cooopeerre.png">      
+    </ion-slide>
+  
+    <ion-slide>
+      <img style="width: 50%" src="../../../assets/img/forcasindical.png">
+    </ion-slide>
+    
+    <ion-slide>
+      <img style="width: 50%" src="../../../assets/img/fotonsolucoes.png">
+    </ion-slide>
+  
+    <ion-slide>
+      <img style="width: 50%" src="../../../assets/img/cktm.png">
+    </ion-slide>
 
     <ion-slide>
-      <img style="min-width: 50%" src="../../../assets/img/cooopeerre.png">      
+      <img style="width: 50%" src="../../../assets/img/cooopeerre.png">      
     </ion-slide>
-  
-    <ion-slide>
-      <img style="min-width: 50%" src="../../../assets/img/fitmmrj.png">
-    </ion-slide>
-  
-    <ion-slide>
-      <img style="min-width: 50%" src="../../../assets/img/wipdev.jpg">
-    </ion-slide>
-  
-  
-    <ion-slide>
-      <img style="min-width: 50%" src="../../../assets/img/primesol.jpg">
-    </ion-slide>
-  
-    <ion-slide>
-      <img style="min-width: 50%" src="../../../assets/img/redeaurora.jpeg">
-    </ion-slide>
-  
-    <ion-slide>
-      <img style="min-width: 50%" src="../../../assets/img/fotonsolucoes.png">
-    </ion-slide>
-  
-    <ion-slide>
-      <img style="min-width: 50%" src="../../../assets/img/forcasindical.png">
-    </ion-slide>
-  
-  
-    </ion-slides>
 
+    <ion-slide>
+      <img style="width: 50%" src="../../../assets/img/primesol.jpg">
+    </ion-slide>
+  
+    <ion-slide>
+      <img style="width: 50%" src="../../../assets/img/redeaurora.jpeg">
+    </ion-slide>
+  
+    <ion-slide>
+      <img style="width: 50%" src="../../../assets/img/wipdev.jpg">
+    </ion-slide>
+
+    <ion-slide>
+      <img style="width: 50%" src="../../../assets/img/fitmmrj.png">
+    </ion-slide>
+  
+
+  </ion-slides>
+  <div class="apoio" style=" height: 100px; width: 20%; background-color: beige; display:inline-block;"></div>
 </ion-content>
 
 
   <ion-footer class="footer"> 
-    
-    <ion-label style="padding-left: 15px;" >Made With <ion-icon name="heart"></ion-icon> by Makrom / TripleAVB</ion-label>
   
-    <div class="menu-footer">
-      <ion-label [routerLink]="['/eventos']">Eventos</ion-label>
-      <ion-label [routerLink]="['/publicacoes']">Publicações</ion-label>
-      <ion-label [routerLink]="['/agenda']">Agenda</ion-label>
-      <ion-label [routerLink]="['/galeria']" >Galeria de Fotos</ion-label>
-      <ion-label [routerLink]="['/faleconosco']">Fale Conosco</ion-label>
+    <div class="menu-footer" style="font-size: 14px; margin-top: 10px; margin-bottom: 10px; display: flex; ">
+      <ion-label [routerLink]="['/eventos']">EVENTOS</ion-label>
+      <ion-label [routerLink]="['/publicacoes']" style="margin-left: 20px;">PUBLICAÇÕES</ion-label>
+      <ion-label [routerLink]="['/agenda']">AGENDA</ion-label>
+      <ion-label [routerLink]="['/galeria']" >GALERIA DE FOTOS</ion-label>
+      <ion-label [routerLink]="['/faleconosco']">FALE CONOSCO</ion-label>
     </div>
   
     <div class="social-media-icons">
@@ -154,9 +149,9 @@
 
 <!-- MAS DEU PRA RESOLVER USANDO UMA FUNÇÃO COM TYPESCRIPT -->
       
-      <ion-label (click)="openExternalLinkFacebook()"> <strong>Facebook</strong> </ion-label>
-      <ion-label (click)="openExternalLinkInstagram()"> <strong>Instagram</strong> </ion-label>
-      <ion-label (click)="openExternalLinkYouTube()"> <strong>Youtube</strong> </ion-label>
+      <ion-label (click)="openExternalLinkFacebook()"> <strong><img style="width: 20px;" src="../../../assets/img/facebook-logo-redondo.png"></strong> </ion-label>
+      <ion-label (click)="openExternalLinkInstagram()"> <strong><img style="width: 32px;" src="../../../assets/img/logo-instagram-png-fundo-transparente6.webp"></strong> </ion-label>
+      <ion-label (click)="openExternalLinkYouTube()"> <strong><img style="width: 20px; margin-right: 400px;" src="../../../assets/img/logo-youtube.png"></strong></ion-label>
     </div>
     
     

@@ -230,12 +230,8 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: () => import('./pages/inside/home/home.module').then( m => m.HomePageModule)
-  },  {
-    path: 'exemplo',
-    loadChildren: () => import('./pages/exemplo/exemplo.module').then( m => m.ExemploPageModule)
-  }
-
-
+  },
+  
 ];
 @NgModule({
   imports: [
