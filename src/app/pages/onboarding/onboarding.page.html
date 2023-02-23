@@ -10,7 +10,7 @@
     <ion-label class="label-header" >Login</ion-label>
   </div>
     |
-    <div style="padding-left: 15px; margin-right: 50px;" [routerLink]="['/signup']" >
+    <div [routerLink]="['/signup']" >
       <ion-icon name="pencil"></ion-icon>
       <ion-label >Cadastro</ion-label>
     </div>
@@ -48,42 +48,44 @@
   
   <ion-content>
 
-<ion-slides style="margin-bottom: 0"pager="true" [options]="slideOpts">
+<ion-slides style="margin-bottom: 0;" pager="true" [options]="slideOpts">
 
-  <ion-slide style="height: 900px;">
-    <img style="width: 100%; height: 900px; background-size: auto; display: block;" src="../../../assets/images-coopeere/coopeereslide2.png" >
+  <ion-slide>
+    <img style=" width: 100%; height: 900px;" src="../../../assets/images-coopeere/coopeereslide2.png" >
   
-    <h1 class="text-slider-c">Coopere você também<br>torne-se um cooperado</h1>
-    <button style="transform: translate(-120%, -50%);" [routerLink]="['/signup']">CADASTRE-SE</button>  
+    <h1 class="text-slider-c" style="transform: translate(-57%, 50%); ">Coopere você também<br>torne-se um cooperado</h1>
+    <button style="transform: translate(-120%, 50%); " [routerLink]="['/signup']">CADASTRE-SE</button>  
   </ion-slide>
 
   <ion-slide style="height: 900px;">
-    <img style="width: 3000px; background-size: 1000px , 1000px;" src="../../../assets/images-coopeere/coopeereslide1.png">
+    <img style=" width: 100%; background-size: contain;" src="../../../assets/images-coopeere/coopeereslide1.png">
 
-    <h1 style="transform: translate(-57%, -35%);">O que a sociedade espera <br> dos nossos governantes?</h1>
-    <button [routerLink]="['/signup']">CADASTRE-SE</button>
+    <h1 style="transform: translate(-57%, 50%);  ">O que a sociedade espera <br> dos nossos governantes?</h1>
+    <button [routerLink]="['/signup']"style="transform: translate(-120%, 60%); ">CADASTRE-SE</button>
   </ion-slide>
 
-  <ion-slide style="height: 900px;">
-    <img style="width: 100%; background-size: cove" src="../../../assets/images-coopeere/coopeereslide2.png">
+  <ion-slide>
+    <img style=" height: 900px; width: auto; background-size: auto;margin:auto; background-size: contain" src="../../../assets/images-coopeere/coopeereslide2.png">
   
-    <h1 style="transform: translate(-57%, -10%);">O que nossos jovens <br> esperam do futuro?</h1>
-    <button [routerLink]="['/signup']">CADASTRE-SE</button>  
+    <h1 style="transform: translate(-57%, 50%); ">O que nossos jovens <br> esperam do futuro?</h1>
+    <button [routerLink]="['/signup']" style="transform: translate(-120%, 60%); ">CADASTRE-SE</button>  
   </ion-slide>
 
  
 
 
-  <ion-slide style="height: 900px;">
-    <img style="width: 100%; background-size: cover" src="../../../assets/images-coopeere/coopeere-offshore.jpg">
+  <ion-slide>
+    <img style="height: 900px;  width: 100%;  background-size: cover" src="../../../assets/images-coopeere/coopeere-offshore.jpg">
    
-    <h1 style="transform: translate(-57%, -75%);">Quantos milhares de <br> empregos poderão ser <br>criados?</h1>
-    <button style="transform: translate(-120%, -150%);" [routerLink]="['/signup']">CADASTRE-SE</button>  
+    <h1 style="transform: translate(-57%, 0%); ">Quantos milhares de <br> empregos poderão ser <br>criados?</h1>
+    <button style="transform: translate(-120%, 60%); " [routerLink]="['/signup']">CADASTRE-SE</button>  
   </ion-slide>
 
   </ion-slides>
 
 
+
+<div class="footer-footer">
 
   <h1 style="height: 100px; margin-top: 0; width: 30%; padding-left: 400px; background-color: #D8E0D5; display:flex; float: left; text-align: end;font-weight:100;color: black">Apoio:</h1>
 
@@ -128,12 +130,16 @@
 
   </ion-slides>
   <div class="apoio" style=" height: 100px; width: 20%; background-color: #D8E0D5; display:inline-block;"></div>
+</div>
+
 </ion-content>
+
+
 
 
   <ion-footer class="footer"> 
   
-    <div class="menu-footer" style="font-size: 14px; margin-top: 10px; margin-bottom: 10px; display: flex; ">
+    <div class="menu-footer" style="font-size: 14px; margin-top: 5px; margin-bottom: 5px; display: flex; ">
       <ion-label [routerLink]="['/eventos']">EVENTOS</ion-label>
       <ion-label [routerLink]="['/publicacoes']" style="margin-left: 20px;">PUBLICAÇÕES</ion-label>
       <ion-label [routerLink]="['/agenda']" style="margin-left: 20px;">AGENDA</ion-label>

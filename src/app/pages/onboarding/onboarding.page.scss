@@ -1,4 +1,5 @@
 
+
 .carousel {
     overflow: hidden;
     width: 100%;
@@ -77,6 +78,8 @@ ion-slide {
     position: relative;
 }
 
+
+
 ion-slide h1, ion-slide p {
     position: absolute;
     top: 30%;
@@ -87,20 +90,21 @@ ion-slide h1, ion-slide p {
     margin-top: 250px;
     width: 50%;
     text-shadow: 0px 0px 5px rgb(0 0 0 / 78%);
-    
     min-width: 10%;
-    font-family: sans-serif;
+    font-family: "open sans", sans-serif;
 }
 
 @media (max-width: 767px) {
    ion-slide h1 {
        font-size: 18px;
+       font-family: "open sans", sans-serif;
     }
  }
 
  @media (max-width: 1366px) {
     ion-slide h1 {
         font-size: 20px;
+        font-family: "open sans", sans-serif;
      }
   }
  
@@ -117,7 +121,7 @@ ion-slide button {
     padding: 15px 24px;
     border-radius: 50px;
     background-color: #2B571A;
-    font-family: sans-serif;
+    font-family: 'Open Sans';
 }
 
 @media (max-width: 767px) {
@@ -131,12 +135,7 @@ ion-slide button {
  }
 
  ion-content {
-    padding: 0;
-    margin:0;
-    height: 100%;
-    overflow-y: auto;
-    display: flex;
-    flex: 200px;
+
 }
 
 .container {
@@ -197,7 +196,7 @@ ion-slide button {
 
 .container-form {
     
-    max-width: 500px;
+    
     align-items: center;
     justify-content: center;
     display: flex;
@@ -310,8 +309,60 @@ ion-input {
       }
 
       ion-header {
-        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+      //  z-index: 10;
     }
+
+    .header-header {
+        //border: burlywood 5px solid;
+        background-color: #2b571a;
+        display: flex;
+        justify-content: flex-end;
+    
+    }
+    
+    .header {
+        //border: darkblue 5px solid;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        padding: 45px 0px 0px 400px;
+        word-spacing: 1px;
+    
+        
+    }
+
+    .footer-footer h1{
+        height: 50px; 
+        margin-top: 0; 
+        width: 30%; 
+        background-color: #D8E0D5; 
+        display:flex; 
+        float: left; 
+        text-align: end;
+        font-weight:100;
+        color: black;
+    }
+    
+    .footer-footer ion-slides{
+        height: 50px; 
+        background-color: #D8E0D5; 
+        padding-top: 20px; 
+        padding-bottom: 20px; 
+        width: 50%; 
+        display:inline-block;
+    }
+
+    .apoio {
+        height: 50px; 
+        width: 20%; 
+        background-color: #D8E0D5; 
+        display:inline-block;
+    }
+
 
     ion-img {
         display: none;
