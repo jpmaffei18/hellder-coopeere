@@ -1,6 +1,4 @@
 
-
-
 <!-- -->
 
 <ion-header class="header-header">
@@ -27,19 +25,20 @@
     
   
     
-    <ion-button fill="clear" style="color: #000000; font-weight: bold; font-size: 15px; " [routerLink]="['/onboarding']">Home</ion-button>
+    <ion-button fill="clear" style="color: #7B9A6E; font-weight: bold; font-size: 15px;" [routerLink]="['/onboarding']">Home</ion-button>
     
     <div class="dropdown">
-      <a [routerLink]="['/onboarding']"  style="color: #000000; font-weight: bold; font-size: 15px; ">A COOPEERE</a>
-      <div class="dropdown-content">
+      <a [routerLink]="['/onboarding']"  style="color: #000000; font-weight: bold; font-size: 15px; text-decoration: none; ">A COOPEERE </a>
+      <div class="dropdown-content" >
+
         <a [routerLink]="['/quemsomos']" class="dropdown-item">Quem Somos?</a>
         <a [routerLink]="['/objetivos']" class="dropdown-item">Objetivo</a>
         <a [routerLink]="['/equipe']" class="dropdown-item">A Equipe</a>
       </div>
     </div>
-  
-    <ion-button fill="clear" style="color: #000000; font-weight: bold; font-size: 15px;" [routerLink]="['/legislacao']">Legislação</ion-button>
+    
     <ion-button fill="clear" style="color: #000000;font-weight: bold; font-size: 15px; " [routerLink]="['/estatuto']">Estatuto</ion-button>
+    <ion-button fill="clear" style="color: #000000; font-weight: bold; font-size: 15px;" [routerLink]="['/legislacao']">Legislação</ion-button>
     <ion-button fill="clear" style="color: #000000; font-weight: bold; font-size: 15px; " [routerLink]="['/vantagens']">Vantagens</ion-button>
     <ion-button fill="clear" style="color: #000000;font-weight: bold; font-size: 15px; " [routerLink]="['/parceiros']">Parceiros</ion-button>
     <ion-button fill="clear" style="color: #000000;font-weight: bold; font-size: 15px;" [routerLink]="['/faleconosco']">Fale Conosco</ion-button>
@@ -48,24 +47,25 @@
   
   
   <ion-content>
-<ion-slides pager="true" [options]="slideOpts">
+
+<ion-slides style="margin-bottom: 0"pager="true" [options]="slideOpts">
 
   <ion-slide style="height: 900px;">
-    <img style="width: 100%; height: 900px; background-size: contain; display: block;" src="../../../assets/images-coopeere/coopeereslide2.png" >
+    <img style="width: 100%; height: 900px; background-size: auto; display: block;" src="../../../assets/images-coopeere/coopeereslide2.png" >
   
     <h1 class="text-slider-c">Coopere você também<br>torne-se um cooperado</h1>
     <button style="transform: translate(-120%, -50%);" [routerLink]="['/signup']">CADASTRE-SE</button>  
   </ion-slide>
 
   <ion-slide style="height: 900px;">
-    <img style="width: 3000px; background-size: contain" src="../../../assets/images-coopeere/coopeereslide1.png">
+    <img style="width: 3000px; background-size: 1000px , 1000px;" src="../../../assets/images-coopeere/coopeereslide1.png">
 
     <h1 style="transform: translate(-57%, -35%);">O que a sociedade espera <br> dos nossos governantes?</h1>
     <button [routerLink]="['/signup']">CADASTRE-SE</button>
   </ion-slide>
 
   <ion-slide style="height: 900px;">
-    <img style="width: 100%; background-size: contain" src="../../../assets/images-coopeere/coopeereslide2.png">
+    <img style="width: 100%; background-size: cove" src="../../../assets/images-coopeere/coopeereslide2.png">
   
     <h1 style="transform: translate(-57%, -10%);">O que nossos jovens <br> esperam do futuro?</h1>
     <button [routerLink]="['/signup']">CADASTRE-SE</button>  
@@ -75,21 +75,19 @@
 
 
   <ion-slide style="height: 900px;">
-    <img style="width: 100%; background-size: contain" src="../../../assets/images-coopeere/coopeere-offshore.jpg">
+    <img style="width: 100%; background-size: cover" src="../../../assets/images-coopeere/coopeere-offshore.jpg">
    
     <h1 style="transform: translate(-57%, -75%);">Quantos milhares de <br> empregos poderão ser <br>criados?</h1>
     <button style="transform: translate(-120%, -150%);" [routerLink]="['/signup']">CADASTRE-SE</button>  
   </ion-slide>
 
-
- 
-
-
   </ion-slides>
 
-  <h1 style="height: 100px; width: 20%; background-color: beige; display:inline-block; color: black">Apoio:</h1>
 
-  <ion-slides style=" height: 100px; background-color: beige; padding-top: 20px; padding-bottom: 20px; width: 60%; display:inline-block;"   [options]="slideOpts2" >
+
+  <h1 style="height: 100px; margin-top: 0; width: 30%; padding-left: 400px; background-color: #D8E0D5; display:flex; float: left; text-align: end;font-weight:100;color: black">Apoio:</h1>
+
+  <ion-slides style=" height: 100px; background-color: #D8E0D5; padding-top: 20px; padding-bottom: 20px; width: 50%; display:inline-block;"   [options]="slideOpts2" >
   
     <ion-slide>
       <img style="width: 50%" src="../../../assets/img/cooopeerre.png">      
@@ -129,7 +127,7 @@
   
 
   </ion-slides>
-  <div class="apoio" style=" height: 100px; width: 20%; background-color: beige; display:inline-block;"></div>
+  <div class="apoio" style=" height: 100px; width: 20%; background-color: #D8E0D5; display:inline-block;"></div>
 </ion-content>
 
 
@@ -138,17 +136,13 @@
     <div class="menu-footer" style="font-size: 14px; margin-top: 10px; margin-bottom: 10px; display: flex; ">
       <ion-label [routerLink]="['/eventos']">EVENTOS</ion-label>
       <ion-label [routerLink]="['/publicacoes']" style="margin-left: 20px;">PUBLICAÇÕES</ion-label>
-      <ion-label [routerLink]="['/agenda']">AGENDA</ion-label>
-      <ion-label [routerLink]="['/galeria']" >GALERIA DE FOTOS</ion-label>
-      <ion-label [routerLink]="['/faleconosco']">FALE CONOSCO</ion-label>
+      <ion-label [routerLink]="['/agenda']" style="margin-left: 20px;">AGENDA</ion-label>
+      <ion-label [routerLink]="['/galeria']" style="margin-left: 20px;" >GALERIA DE FOTOS</ion-label>
+      <ion-label [routerLink]="['/faleconosco']" style="margin-left: 20px;">FALE CONOSCO</ion-label>
     </div>
   
     <div class="social-media-icons">
 
-<!-- ROUTER LINKS NÃO FUNCIONAM COM LINKS DE VERDADE  -->
-
-<!-- MAS DEU PRA RESOLVER USANDO UMA FUNÇÃO COM TYPESCRIPT -->
-      
       <ion-label (click)="openExternalLinkFacebook()"> <strong><img style="width: 20px;" src="../../../assets/img/facebook-logo-redondo.png"></strong> </ion-label>
       <ion-label (click)="openExternalLinkInstagram()"> <strong><img style="width: 32px;" src="../../../assets/img/logo-instagram-png-fundo-transparente6.webp"></strong> </ion-label>
       <ion-label (click)="openExternalLinkYouTube()"> <strong><img style="width: 20px; margin-right: 400px;" src="../../../assets/img/logo-youtube.png"></strong></ion-label>
